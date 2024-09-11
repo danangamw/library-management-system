@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateBookRequest;
 use App\Http\Resources\BookResource;
 use App\Interfaces\BookRepositoryInterface;
 use App\Models\Author;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
@@ -21,7 +22,10 @@ class BookController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Books.
+     * 
+     * @group Books
+     * @return JsonResponse
      */
     public function index()
     {
@@ -31,7 +35,12 @@ class BookController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created book in storage.
+     * 
+     * @group Books
+     * 
+     * @param StoreBookRequest $request
+     * @return JsonResponse
      */
     public function store(StoreBookRequest $request)
     {
@@ -47,9 +56,14 @@ class BookController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified book.
+     *
+     * @group Books
+     * 
+     * @param int $id
+     * @return JsonResponse
      */
-    public function show($id)
+    public function show($id): JsonResponse
     {
         $book = $this->bookRepositoryInterface->getById($id);
         if (!$book) {
@@ -61,6 +75,11 @@ class BookController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * 
+     * @group Books
+     * @param UpdateBookRequest $request
+     * @param int $id
+     * @return JsonResponse
      */
     public function update(UpdateBookRequest $request, $id)
     {
@@ -82,6 +101,10 @@ class BookController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * 
+     * @group Books
+     * @param int $id
+     * @return JsonResponse
      */
     public function destroy($id)
     {

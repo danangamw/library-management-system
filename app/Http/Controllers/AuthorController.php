@@ -22,7 +22,9 @@ class AuthorController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the authors.
+     * 
+     * @group Authors
      */
     public function index(): JsonResponse
     {
@@ -32,7 +34,12 @@ class AuthorController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created author in storage.
+     * 
+     * @group Authors
+     * @bodyParam name string required The name of the author. Example: J.K. Rowling
+     * @bodyParam bio string optional The biography of the author. Example: British author, best known for the Harry Potter series.
+     * @bodyParam birth_date date optional The birth date of the author. Example: 1965-07-31
      */
     public function store(StoreAuthorRequest $request): JsonResponse
     {
@@ -51,7 +58,14 @@ class AuthorController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified author.
+     * 
+     * @group Authors
+     * @urlParam id integer required The ID of the author. Example: 1
+     * @bodyParam name string The new name of the author. Example: J.K. Rowling
+     * @bodyParam bio string The new biography of the author. Example: British author, best known for the Harry Potter series.
+     * @bodyParam birth_date date The new birth date of the author. Example: 1965-07-31
+     * @urlParam id integer required The ID of the author. Example: 1
      */
     public function show($id): JsonResponse
     {
@@ -66,7 +80,13 @@ class AuthorController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified author in storage.
+     * 
+     * @group Authors
+     * @urlParam id integer required The ID of the author. Example: 1
+     * @response {
+     *   "message": "Author successfully deleted"
+     * }
      */
     public function update(UpdateAuthorRequest $request,  $id): JsonResponse
     {
@@ -94,7 +114,13 @@ class AuthorController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified author from storage.
+     * 
+     * @group Authors
+     * @urlParam id integer required The ID of the author. Example: 1
+     * @response {
+     *   "message": "Author successfully deleted"
+     * }
      */
     public function destroy($id): JsonResponse
     {
@@ -109,7 +135,12 @@ class AuthorController extends Controller
         return ApiResponseClass::sendResponse(null, "Author successfully deleted", 200);
     }
 
-
+    /**
+     * Display a listing of the book within specific author.
+     * 
+     * @group Associations
+     * @urlParam id integer required The ID of the author. Example: 1
+     */
     public function getBooks($id): JsonResponse
     {
         $books = $this->authorRepositoryInterface->books($id);

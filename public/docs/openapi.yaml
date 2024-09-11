@@ -7,10 +7,10 @@ servers:
   -
     url: 'http://localhost:8000'
 paths:
-  /api/v1/authors:
+  '/api/v1/authors/{id}/books':
     get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
+      summary: 'Display a listing of the book within specific author.'
+      operationId: displayAListingOfTheBookWithinSpecificAuthor
       description: ''
       parameters: []
       responses:
@@ -25,9 +25,139 @@ paths:
                   data:
                     -
                       id: 1
-                      name: 'Madalyn Ward'
-                      bio: 'Vitae sequi ut modi omnis omnis. Facere qui aut quas ducimus aspernatur omnis sequi. Esse perferendis quos vitae esse alias facere dolor.'
-                      birth_date: '1994-10-15'
+                      title: 'Aut fugit.'
+                      description: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
+                      publish_date: '2001-08-16'
+                      author:
+                        name: 'ttesting update'
+                    -
+                      id: 2
+                      title: 'Provident expedita nostrum odit.'
+                      description: 'Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.'
+                      publish_date: '1983-02-04'
+                      author:
+                        name: 'ttesting update'
+                    -
+                      id: 3
+                      title: 'Nostrum consequatur autem omnis ducimus.'
+                      description: 'Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.'
+                      publish_date: '1972-02-27'
+                      author:
+                        name: 'ttesting update'
+                    -
+                      id: 4
+                      title: 'Eos ipsum officiis alias.'
+                      description: 'Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.'
+                      publish_date: '2012-01-02'
+                      author:
+                        name: 'ttesting update'
+                    -
+                      id: 5
+                      title: 'At vero accusamus eligendi.'
+                      description: 'Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.'
+                      publish_date: '2001-08-31'
+                      author:
+                        name: 'ttesting update'
+                  message: 'Books with author id 1'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        title: 'Aut fugit.'
+                        description: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
+                        publish_date: '2001-08-16'
+                        author:
+                          name: 'ttesting update'
+                      -
+                        id: 2
+                        title: 'Provident expedita nostrum odit.'
+                        description: 'Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.'
+                        publish_date: '1983-02-04'
+                        author:
+                          name: 'ttesting update'
+                      -
+                        id: 3
+                        title: 'Nostrum consequatur autem omnis ducimus.'
+                        description: 'Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.'
+                        publish_date: '1972-02-27'
+                        author:
+                          name: 'ttesting update'
+                      -
+                        id: 4
+                        title: 'Eos ipsum officiis alias.'
+                        description: 'Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.'
+                        publish_date: '2012-01-02'
+                        author:
+                          name: 'ttesting update'
+                      -
+                        id: 5
+                        title: 'At vero accusamus eligendi.'
+                        description: 'Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.'
+                        publish_date: '2001-08-31'
+                        author:
+                          name: 'ttesting update'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        title:
+                          type: string
+                          example: 'Aut fugit.'
+                        description:
+                          type: string
+                          example: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
+                        publish_date:
+                          type: string
+                          example: '2001-08-16'
+                        author:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: 'ttesting update'
+                  message:
+                    type: string
+                    example: 'Books with author id 1'
+      tags:
+        - Associations
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the author.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/authors:
+    get:
+      summary: 'Display a listing of the authors.'
+      operationId: displayAListingOfTheAuthors
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id: 1
+                      name: 'ttesting update'
+                      bio: 'no bio needed'
+                      birth_date: '2024-09-11'
                     -
                       id: 2
                       name: 'Jakob Lynch'
@@ -68,11 +198,6 @@ paths:
                       name: 'Prof. Kayley Borer'
                       bio: 'Corrupti animi nesciunt omnis aperiam. Aut voluptatem deserunt ut corporis recusandae id.'
                       birth_date: '1976-10-01'
-                    -
-                      id: 10
-                      name: 'Brando Goyette'
-                      bio: 'Est ducimus magni asperiores impedit quisquam cum qui. Est corrupti qui est sunt quasi. Doloribus repellat necessitatibus reprehenderit earum explicabo. Non qui eos consequatur voluptas expedita.'
-                      birth_date: '1981-08-06'
                   message: 'List of all authors'
                 properties:
                   success:
@@ -83,9 +208,9 @@ paths:
                     example:
                       -
                         id: 1
-                        name: 'Madalyn Ward'
-                        bio: 'Vitae sequi ut modi omnis omnis. Facere qui aut quas ducimus aspernatur omnis sequi. Esse perferendis quos vitae esse alias facere dolor.'
-                        birth_date: '1994-10-15'
+                        name: 'ttesting update'
+                        bio: 'no bio needed'
+                        birth_date: '2024-09-11'
                       -
                         id: 2
                         name: 'Jakob Lynch'
@@ -126,11 +251,6 @@ paths:
                         name: 'Prof. Kayley Borer'
                         bio: 'Corrupti animi nesciunt omnis aperiam. Aut voluptatem deserunt ut corporis recusandae id.'
                         birth_date: '1976-10-01'
-                      -
-                        id: 10
-                        name: 'Brando Goyette'
-                        bio: 'Est ducimus magni asperiores impedit quisquam cum qui. Est corrupti qui est sunt quasi. Doloribus repellat necessitatibus reprehenderit earum explicabo. Non qui eos consequatur voluptas expedita.'
-                        birth_date: '1981-08-06'
                     items:
                       type: object
                       properties:
@@ -139,27 +259,27 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Madalyn Ward'
+                          example: 'ttesting update'
                         bio:
                           type: string
-                          example: 'Vitae sequi ut modi omnis omnis. Facere qui aut quas ducimus aspernatur omnis sequi. Esse perferendis quos vitae esse alias facere dolor.'
+                          example: 'no bio needed'
                         birth_date:
                           type: string
-                          example: '1994-10-15'
+                          example: '2024-09-11'
                   message:
                     type: string
                     example: 'List of all authors'
       tags:
-        - Endpoints
+        - Authors
       security: []
     post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
+      summary: 'Store a newly created author in storage.'
+      operationId: storeANewlyCreatedAuthorInStorage
       description: ''
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Authors
       requestBody:
         required: true
         content:
@@ -169,23 +289,23 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: paxbevvcdtnunnvyboqiyyqxy
+                  description: 'The name of the author.'
+                  example: 'J.K. Rowling'
                 bio:
                   type: string
-                  description: ''
-                  example: reiciendis
+                  description: 'optional The biography of the author.'
+                  example: 'British author, best known for the Harry Potter series.'
                 birth_date:
-                  type: string
-                  description: 'Must be a valid date.'
-                  example: '2024-09-11T08:15:05'
+                  type: date
+                  description: 'optional The birth date of the author.'
+                  example: '1965-07-31'
               required:
                 - name
       security: []
   '/api/v1/authors/{id}':
     get:
-      summary: 'Display the specified resource.'
-      operationId: displayTheSpecifiedResource
+      summary: 'Display the specified author.'
+      operationId: displayTheSpecifiedAuthor
       description: ''
       parameters: []
       responses:
@@ -199,9 +319,9 @@ paths:
                   success: true
                   data:
                     id: 1
-                    name: 'Madalyn Ward'
-                    bio: 'Vitae sequi ut modi omnis omnis. Facere qui aut quas ducimus aspernatur omnis sequi. Esse perferendis quos vitae esse alias facere dolor.'
-                    birth_date: '1994-10-15'
+                    name: 'ttesting update'
+                    bio: 'no bio needed'
+                    birth_date: '2024-09-11'
                   message: 'Author retrieved'
                 properties:
                   success:
@@ -215,29 +335,20 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Madalyn Ward'
+                        example: 'ttesting update'
                       bio:
                         type: string
-                        example: 'Vitae sequi ut modi omnis omnis. Facere qui aut quas ducimus aspernatur omnis sequi. Esse perferendis quos vitae esse alias facere dolor.'
+                        example: 'no bio needed'
                       birth_date:
                         type: string
-                        example: '1994-10-15'
+                        example: '2024-09-11'
                   message:
                     type: string
                     example: 'Author retrieved'
       tags:
-        - Endpoints
-      security: []
-    put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
+        - Authors
       requestBody:
-        required: true
+        required: false
         content:
           application/json:
             schema:
@@ -245,41 +356,20 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ochncjkwcnzajuucqzcvsmom
+                  description: 'The new name of the author.'
+                  example: 'J.K. Rowling'
                 bio:
                   type: string
-                  description: ''
-                  example: officiis
+                  description: 'The new biography of the author.'
+                  example: 'British author, best known for the Harry Potter series.'
                 birth_date:
-                  type: string
-                  description: 'Must be a valid date.'
-                  example: '2024-09-11T08:15:05'
-              required:
-                - name
+                  type: date
+                  description: 'The new birth date of the author.'
+                  example: '1965-07-31'
       security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the author.'
-        example: 1
-        required: true
-        schema:
-          type: integer
-  '/api/v1/authors/{id}/books':
-    get:
-      summary: ''
-      operationId: getApiV1AuthorsIdBooks
+    put:
+      summary: 'Update the specified author in storage.'
+      operationId: updateTheSpecifiedAuthorInStorage
       description: ''
       parameters: []
       responses:
@@ -290,112 +380,55 @@ paths:
               schema:
                 type: object
                 example:
-                  success: true
-                  data:
-                    -
-                      id: 1
-                      title: 'Aut fugit.'
-                      description: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
-                      publish_date: '2001-08-16'
-                      author:
-                        name: 'Madalyn Ward'
-                    -
-                      id: 2
-                      title: 'Provident expedita nostrum odit.'
-                      description: 'Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.'
-                      publish_date: '1983-02-04'
-                      author:
-                        name: 'Madalyn Ward'
-                    -
-                      id: 3
-                      title: 'Nostrum consequatur autem omnis ducimus.'
-                      description: 'Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.'
-                      publish_date: '1972-02-27'
-                      author:
-                        name: 'Madalyn Ward'
-                    -
-                      id: 4
-                      title: 'Eos ipsum officiis alias.'
-                      description: 'Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.'
-                      publish_date: '2012-01-02'
-                      author:
-                        name: 'Madalyn Ward'
-                    -
-                      id: 5
-                      title: 'At vero accusamus eligendi.'
-                      description: 'Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.'
-                      publish_date: '2001-08-31'
-                      author:
-                        name: 'Madalyn Ward'
-                  message: 'Books with author id 1'
+                  message: 'Author successfully deleted'
                 properties:
-                  success:
-                    type: boolean
-                    example: true
-                  data:
-                    type: array
-                    example:
-                      -
-                        id: 1
-                        title: 'Aut fugit.'
-                        description: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
-                        publish_date: '2001-08-16'
-                        author:
-                          name: 'Madalyn Ward'
-                      -
-                        id: 2
-                        title: 'Provident expedita nostrum odit.'
-                        description: 'Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.'
-                        publish_date: '1983-02-04'
-                        author:
-                          name: 'Madalyn Ward'
-                      -
-                        id: 3
-                        title: 'Nostrum consequatur autem omnis ducimus.'
-                        description: 'Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.'
-                        publish_date: '1972-02-27'
-                        author:
-                          name: 'Madalyn Ward'
-                      -
-                        id: 4
-                        title: 'Eos ipsum officiis alias.'
-                        description: 'Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.'
-                        publish_date: '2012-01-02'
-                        author:
-                          name: 'Madalyn Ward'
-                      -
-                        id: 5
-                        title: 'At vero accusamus eligendi.'
-                        description: 'Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.'
-                        publish_date: '2001-08-31'
-                        author:
-                          name: 'Madalyn Ward'
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          example: 1
-                        title:
-                          type: string
-                          example: 'Aut fugit.'
-                        description:
-                          type: string
-                          example: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
-                        publish_date:
-                          type: string
-                          example: '2001-08-16'
-                        author:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              example: 'Madalyn Ward'
                   message:
                     type: string
-                    example: 'Books with author id 1'
+                    example: 'Author successfully deleted'
       tags:
-        - Endpoints
+        - Authors
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: zps
+                bio:
+                  type: string
+                  description: ''
+                  example: rem
+                birth_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2024-09-11T08:32:48'
+              required:
+                - name
+      security: []
+    delete:
+      summary: 'Remove the specified author from storage.'
+      operationId: removeTheSpecifiedAuthorFromStorage
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Author successfully deleted'
+                properties:
+                  message:
+                    type: string
+                    example: 'Author successfully deleted'
+      tags:
+        - Authors
       security: []
     parameters:
       -
@@ -408,8 +441,8 @@ paths:
           type: integer
   /api/v1/books:
     get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
+      summary: 'Display a listing of the Books.'
+      operationId: displayAListingOfTheBooks
       description: ''
       parameters: []
       responses:
@@ -428,35 +461,35 @@ paths:
                       description: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
                       publish_date: '2001-08-16'
                       author:
-                        name: 'Madalyn Ward'
+                        name: 'ttesting update'
                     -
                       id: 2
                       title: 'Provident expedita nostrum odit.'
                       description: 'Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.'
                       publish_date: '1983-02-04'
                       author:
-                        name: 'Madalyn Ward'
+                        name: 'ttesting update'
                     -
                       id: 3
                       title: 'Nostrum consequatur autem omnis ducimus.'
                       description: 'Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.'
                       publish_date: '1972-02-27'
                       author:
-                        name: 'Madalyn Ward'
+                        name: 'ttesting update'
                     -
                       id: 4
                       title: 'Eos ipsum officiis alias.'
                       description: 'Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.'
                       publish_date: '2012-01-02'
                       author:
-                        name: 'Madalyn Ward'
+                        name: 'ttesting update'
                     -
                       id: 5
                       title: 'At vero accusamus eligendi.'
                       description: 'Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.'
                       publish_date: '2001-08-31'
                       author:
-                        name: 'Madalyn Ward'
+                        name: 'ttesting update'
                     -
                       id: 6
                       title: 'Ipsam ducimus eaque autem.'
@@ -737,41 +770,6 @@ paths:
                       publish_date: '1997-10-23'
                       author:
                         name: 'Prof. Kayley Borer'
-                    -
-                      id: 46
-                      title: 'Soluta in.'
-                      description: 'Libero voluptatibus id rerum reiciendis architecto qui suscipit. Dicta fugiat a alias iusto voluptatem ut et qui. Optio odit adipisci ut placeat.'
-                      publish_date: '2004-12-20'
-                      author:
-                        name: 'Brando Goyette'
-                    -
-                      id: 47
-                      title: 'Qui eos.'
-                      description: 'Fugiat consequatur eligendi ab est. Molestiae est sint odio non ex et veritatis. Modi quia eos maxime suscipit consectetur. Quasi dignissimos officiis voluptatem.'
-                      publish_date: '1989-12-20'
-                      author:
-                        name: 'Brando Goyette'
-                    -
-                      id: 48
-                      title: 'Illum quis quia sint.'
-                      description: 'Dolore ut enim optio doloribus fuga id inventore. Voluptatem sed quia corrupti eos fugit. Officiis accusamus aut quisquam reiciendis.'
-                      publish_date: '1998-05-06'
-                      author:
-                        name: 'Brando Goyette'
-                    -
-                      id: 49
-                      title: 'Repudiandae quis quia qui.'
-                      description: 'Eum neque ut quos recusandae. Magnam suscipit vitae id dolorem. Dolores quaerat a suscipit quaerat quo.'
-                      publish_date: '2005-09-06'
-                      author:
-                        name: 'Brando Goyette'
-                    -
-                      id: 50
-                      title: 'Est alias vitae soluta.'
-                      description: 'Vel repudiandae aut dolor eum illum natus. Architecto earum quia voluptates cum. Facilis est ut labore deleniti.'
-                      publish_date: '1986-10-05'
-                      author:
-                        name: 'Brando Goyette'
                   message: 'List of all books'
                 properties:
                   success:
@@ -786,35 +784,35 @@ paths:
                         description: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
                         publish_date: '2001-08-16'
                         author:
-                          name: 'Madalyn Ward'
+                          name: 'ttesting update'
                       -
                         id: 2
                         title: 'Provident expedita nostrum odit.'
                         description: 'Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.'
                         publish_date: '1983-02-04'
                         author:
-                          name: 'Madalyn Ward'
+                          name: 'ttesting update'
                       -
                         id: 3
                         title: 'Nostrum consequatur autem omnis ducimus.'
                         description: 'Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.'
                         publish_date: '1972-02-27'
                         author:
-                          name: 'Madalyn Ward'
+                          name: 'ttesting update'
                       -
                         id: 4
                         title: 'Eos ipsum officiis alias.'
                         description: 'Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.'
                         publish_date: '2012-01-02'
                         author:
-                          name: 'Madalyn Ward'
+                          name: 'ttesting update'
                       -
                         id: 5
                         title: 'At vero accusamus eligendi.'
                         description: 'Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.'
                         publish_date: '2001-08-31'
                         author:
-                          name: 'Madalyn Ward'
+                          name: 'ttesting update'
                       -
                         id: 6
                         title: 'Ipsam ducimus eaque autem.'
@@ -1095,41 +1093,6 @@ paths:
                         publish_date: '1997-10-23'
                         author:
                           name: 'Prof. Kayley Borer'
-                      -
-                        id: 46
-                        title: 'Soluta in.'
-                        description: 'Libero voluptatibus id rerum reiciendis architecto qui suscipit. Dicta fugiat a alias iusto voluptatem ut et qui. Optio odit adipisci ut placeat.'
-                        publish_date: '2004-12-20'
-                        author:
-                          name: 'Brando Goyette'
-                      -
-                        id: 47
-                        title: 'Qui eos.'
-                        description: 'Fugiat consequatur eligendi ab est. Molestiae est sint odio non ex et veritatis. Modi quia eos maxime suscipit consectetur. Quasi dignissimos officiis voluptatem.'
-                        publish_date: '1989-12-20'
-                        author:
-                          name: 'Brando Goyette'
-                      -
-                        id: 48
-                        title: 'Illum quis quia sint.'
-                        description: 'Dolore ut enim optio doloribus fuga id inventore. Voluptatem sed quia corrupti eos fugit. Officiis accusamus aut quisquam reiciendis.'
-                        publish_date: '1998-05-06'
-                        author:
-                          name: 'Brando Goyette'
-                      -
-                        id: 49
-                        title: 'Repudiandae quis quia qui.'
-                        description: 'Eum neque ut quos recusandae. Magnam suscipit vitae id dolorem. Dolores quaerat a suscipit quaerat quo.'
-                        publish_date: '2005-09-06'
-                        author:
-                          name: 'Brando Goyette'
-                      -
-                        id: 50
-                        title: 'Est alias vitae soluta.'
-                        description: 'Vel repudiandae aut dolor eum illum natus. Architecto earum quia voluptates cum. Facilis est ut labore deleniti.'
-                        publish_date: '1986-10-05'
-                        author:
-                          name: 'Brando Goyette'
                     items:
                       type: object
                       properties:
@@ -1150,21 +1113,21 @@ paths:
                           properties:
                             name:
                               type: string
-                              example: 'Madalyn Ward'
+                              example: 'ttesting update'
                   message:
                     type: string
                     example: 'List of all books'
       tags:
-        - Endpoints
+        - Books
       security: []
     post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
+      summary: 'Store a newly created book in storage.'
+      operationId: storeANewlyCreatedBookInStorage
       description: ''
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Books
       requestBody:
         required: true
         content:
@@ -1175,27 +1138,27 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: eymtklrmvvellzuwrl
+                  example: lz
                 description:
                   type: string
                   description: ''
-                  example: 'Unde ut rerum rerum quae distinctio.'
+                  example: 'Esse nulla fuga in omnis veritatis omnis.'
                 publish_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-09-11T08:15:05'
+                  example: '2024-09-11T08:32:48'
                 author_id:
                   type: string
                   description: ''
-                  example: ipsa
+                  example: qui
               required:
                 - title
                 - author_id
       security: []
   '/api/v1/books/{id}':
     get:
-      summary: 'Display the specified resource.'
-      operationId: displayTheSpecifiedResource
+      summary: 'Display the specified book.'
+      operationId: displayTheSpecifiedBook
       description: ''
       parameters: []
       responses:
@@ -1213,7 +1176,7 @@ paths:
                     description: 'Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.'
                     publish_date: '2001-08-16'
                     author:
-                      name: 'Madalyn Ward'
+                      name: 'ttesting update'
                   message: 'Book retrieved'
                 properties:
                   success:
@@ -1239,12 +1202,12 @@ paths:
                         properties:
                           name:
                             type: string
-                            example: 'Madalyn Ward'
+                            example: 'ttesting update'
                   message:
                     type: string
                     example: 'Book retrieved'
       tags:
-        - Endpoints
+        - Books
       security: []
     put:
       summary: 'Update the specified resource in storage.'
@@ -1253,7 +1216,7 @@ paths:
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Books
       requestBody:
         required: true
         content:
@@ -1264,15 +1227,15 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bexbkg
+                  example: mcsfqbppczqlwjcmmsutsubet
                 description:
                   type: string
                   description: ''
-                  example: 'Beatae eaque dolorem hic tempore.'
+                  example: 'Aperiam deserunt dicta numquam quidem.'
                 publish_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-09-11T08:15:05'
+                  example: '2024-09-11T08:32:48'
                 author_id:
                   type: string
                   description: ''
@@ -1287,7 +1250,7 @@ paths:
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Books
       security: []
     parameters:
       -
@@ -1300,5 +1263,11 @@ paths:
           type: integer
 tags:
   -
-    name: Endpoints
+    name: Associations
+    description: ''
+  -
+    name: Authors
+    description: ''
+  -
+    name: Books
     description: ''

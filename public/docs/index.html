@@ -66,43 +66,57 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
+                    <ul id="tocify-header-associations" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="associations">
+                    <a href="#associations">Associations</a>
                 </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-authors">
-                                <a href="#endpoints-GETapi-v1-authors">Display a listing of the resource.</a>
+                                    <ul id="tocify-subheader-associations" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="associations-GETapi-v1-authors--id--books">
+                                <a href="#associations-GETapi-v1-authors--id--books">Display a listing of the book within specific author.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-authors--id-">
-                                <a href="#endpoints-GETapi-v1-authors--id-">Display the specified resource.</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-authors" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authors">
+                    <a href="#authors">Authors</a>
+                </li>
+                                    <ul id="tocify-subheader-authors" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="authors-GETapi-v1-authors">
+                                <a href="#authors-GETapi-v1-authors">Display a listing of the authors.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-authors--id--books">
-                                <a href="#endpoints-GETapi-v1-authors--id--books">GET api/v1/authors/{id}/books</a>
+                                                                                <li class="tocify-item level-2" data-unique="authors-GETapi-v1-authors--id-">
+                                <a href="#authors-GETapi-v1-authors--id-">Display the specified author.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-authors">
-                                <a href="#endpoints-POSTapi-v1-authors">Store a newly created resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authors-POSTapi-v1-authors">
+                                <a href="#authors-POSTapi-v1-authors">Store a newly created author in storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-authors--id-">
-                                <a href="#endpoints-PUTapi-v1-authors--id-">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authors-PUTapi-v1-authors--id-">
+                                <a href="#authors-PUTapi-v1-authors--id-">Update the specified author in storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-authors--id-">
-                                <a href="#endpoints-DELETEapi-v1-authors--id-">Remove the specified resource from storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authors-DELETEapi-v1-authors--id-">
+                                <a href="#authors-DELETEapi-v1-authors--id-">Remove the specified author from storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-books">
-                                <a href="#endpoints-GETapi-v1-books">Display a listing of the resource.</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-books" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="books">
+                    <a href="#books">Books</a>
+                </li>
+                                    <ul id="tocify-subheader-books" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="books-GETapi-v1-books">
+                                <a href="#books-GETapi-v1-books">Display a listing of the Books.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-books--id-">
-                                <a href="#endpoints-GETapi-v1-books--id-">Display the specified resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="books-GETapi-v1-books--id-">
+                                <a href="#books-GETapi-v1-books--id-">Display the specified book.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-books">
-                                <a href="#endpoints-POSTapi-v1-books">Store a newly created resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="books-POSTapi-v1-books">
+                                <a href="#books-POSTapi-v1-books">Store a newly created book in storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-books--id-">
-                                <a href="#endpoints-PUTapi-v1-books--id-">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="books-PUTapi-v1-books--id-">
+                                <a href="#books-PUTapi-v1-books--id-">Update the specified resource in storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-books--id-">
-                                <a href="#endpoints-DELETEapi-v1-books--id-">Remove the specified resource from storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="books-DELETEapi-v1-books--id-">
+                                <a href="#books-DELETEapi-v1-books--id-">Remove the specified resource from storage.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -133,341 +147,11 @@ You can switch the language used with the tabs at the top right (or from the nav
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
 
-        <h1 id="endpoints">Endpoints</h1>
+        <h1 id="associations">Associations</h1>
 
     
 
-                                <h2 id="endpoints-GETapi-v1-authors">Display a listing of the resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-authors">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/authors" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/authors"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-authors">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Madalyn Ward&quot;,
-            &quot;bio&quot;: &quot;Vitae sequi ut modi omnis omnis. Facere qui aut quas ducimus aspernatur omnis sequi. Esse perferendis quos vitae esse alias facere dolor.&quot;,
-            &quot;birth_date&quot;: &quot;1994-10-15&quot;
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Jakob Lynch&quot;,
-            &quot;bio&quot;: &quot;Alias aut qui culpa natus assumenda. Sit et omnis non eveniet et. Veritatis voluptate quos reprehenderit nisi cumque cum.&quot;,
-            &quot;birth_date&quot;: &quot;1990-05-19&quot;
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Dr. Guillermo Kirlin&quot;,
-            &quot;bio&quot;: &quot;Corrupti aut illum laudantium et sit. Quod consequatur necessitatibus error aut. Ad quas blanditiis cumque laborum consequatur repellendus.&quot;,
-            &quot;birth_date&quot;: &quot;1993-01-12&quot;
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Mr. Adalberto Maggio DDS&quot;,
-            &quot;bio&quot;: &quot;Et odit ullam beatae eveniet rerum quo. Et nisi ipsam omnis architecto voluptas. Eaque sint aut delectus quibusdam ea. Cumque quo fuga mollitia deserunt.&quot;,
-            &quot;birth_date&quot;: &quot;1973-10-09&quot;
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Koby Emard&quot;,
-            &quot;bio&quot;: &quot;Cum aliquid sequi cumque consequatur repellat est. Quae dolorem laudantium rerum voluptatibus amet. Corporis veritatis esse delectus perspiciatis non dolores rem.&quot;,
-            &quot;birth_date&quot;: &quot;2010-01-14&quot;
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Helmer Gislason&quot;,
-            &quot;bio&quot;: &quot;Cum reiciendis sint debitis earum. Porro voluptatem sed dolorem qui sit animi. Pariatur porro itaque a suscipit optio. Explicabo ratione ullam et unde ex omnis. Impedit ducimus soluta incidunt.&quot;,
-            &quot;birth_date&quot;: &quot;2020-10-11&quot;
-        },
-        {
-            &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;Mr. Alexis Fay V&quot;,
-            &quot;bio&quot;: &quot;Iusto tempore quas repellendus. Odio dolores at ipsam optio adipisci asperiores. Quas quibusdam consectetur ut soluta corporis maiores. Omnis sunt iusto aut impedit ipsa.&quot;,
-            &quot;birth_date&quot;: &quot;1990-12-11&quot;
-        },
-        {
-            &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;Jorge Ondricka&quot;,
-            &quot;bio&quot;: &quot;Eveniet ut temporibus ea quis voluptas ut aliquam. Est iusto molestias ut sed vero ratione et. Omnis iste qui porro error optio. Sunt voluptatem rerum voluptatem aut numquam blanditiis facere.&quot;,
-            &quot;birth_date&quot;: &quot;2022-07-18&quot;
-        },
-        {
-            &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;Prof. Kayley Borer&quot;,
-            &quot;bio&quot;: &quot;Corrupti animi nesciunt omnis aperiam. Aut voluptatem deserunt ut corporis recusandae id.&quot;,
-            &quot;birth_date&quot;: &quot;1976-10-01&quot;
-        },
-        {
-            &quot;id&quot;: 10,
-            &quot;name&quot;: &quot;Brando Goyette&quot;,
-            &quot;bio&quot;: &quot;Est ducimus magni asperiores impedit quisquam cum qui. Est corrupti qui est sunt quasi. Doloribus repellat necessitatibus reprehenderit earum explicabo. Non qui eos consequatur voluptas expedita.&quot;,
-            &quot;birth_date&quot;: &quot;1981-08-06&quot;
-        }
-    ],
-    &quot;message&quot;: &quot;List of all authors&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-authors" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-authors"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-authors"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-authors" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-authors">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-authors" data-method="GET"
-      data-path="api/v1/authors"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-authors', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-authors"
-                    onclick="tryItOut('GETapi-v1-authors');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-authors"
-                    onclick="cancelTryOut('GETapi-v1-authors');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-authors"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/authors</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-authors"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-authors"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-v1-authors--id-">Display the specified resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-authors--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/authors/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/authors/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-authors--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Madalyn Ward&quot;,
-        &quot;bio&quot;: &quot;Vitae sequi ut modi omnis omnis. Facere qui aut quas ducimus aspernatur omnis sequi. Esse perferendis quos vitae esse alias facere dolor.&quot;,
-        &quot;birth_date&quot;: &quot;1994-10-15&quot;
-    },
-    &quot;message&quot;: &quot;Author retrieved&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-authors--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-authors--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-authors--id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-authors--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-authors--id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-authors--id-" data-method="GET"
-      data-path="api/v1/authors/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-authors--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-authors--id-"
-                    onclick="tryItOut('GETapi-v1-authors--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-authors--id-"
-                    onclick="cancelTryOut('GETapi-v1-authors--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-authors--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/authors/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-authors--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-authors--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-v1-authors--id-"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the author. Example: <code>1</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETapi-v1-authors--id--books">GET api/v1/authors/{id}/books</h2>
+                                <h2 id="associations-GETapi-v1-authors--id--books">Display a listing of the book within specific author.</h2>
 
 <p>
 </p>
@@ -524,7 +208,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.&quot;,
             &quot;publish_date&quot;: &quot;2001-08-16&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -533,7 +217,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.&quot;,
             &quot;publish_date&quot;: &quot;1983-02-04&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -542,7 +226,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.&quot;,
             &quot;publish_date&quot;: &quot;1972-02-27&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -551,7 +235,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.&quot;,
             &quot;publish_date&quot;: &quot;2012-01-02&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -560,7 +244,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.&quot;,
             &quot;publish_date&quot;: &quot;2001-08-31&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         }
     ],
@@ -651,7 +335,382 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-POSTapi-v1-authors">Store a newly created resource in storage.</h2>
+                <h1 id="authors">Authors</h1>
+
+    
+
+                                <h2 id="authors-GETapi-v1-authors">Display a listing of the authors.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-authors">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/authors" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/authors"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-authors">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;ttesting update&quot;,
+            &quot;bio&quot;: &quot;no bio needed&quot;,
+            &quot;birth_date&quot;: &quot;2024-09-11&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Jakob Lynch&quot;,
+            &quot;bio&quot;: &quot;Alias aut qui culpa natus assumenda. Sit et omnis non eveniet et. Veritatis voluptate quos reprehenderit nisi cumque cum.&quot;,
+            &quot;birth_date&quot;: &quot;1990-05-19&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Dr. Guillermo Kirlin&quot;,
+            &quot;bio&quot;: &quot;Corrupti aut illum laudantium et sit. Quod consequatur necessitatibus error aut. Ad quas blanditiis cumque laborum consequatur repellendus.&quot;,
+            &quot;birth_date&quot;: &quot;1993-01-12&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Mr. Adalberto Maggio DDS&quot;,
+            &quot;bio&quot;: &quot;Et odit ullam beatae eveniet rerum quo. Et nisi ipsam omnis architecto voluptas. Eaque sint aut delectus quibusdam ea. Cumque quo fuga mollitia deserunt.&quot;,
+            &quot;birth_date&quot;: &quot;1973-10-09&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;name&quot;: &quot;Koby Emard&quot;,
+            &quot;bio&quot;: &quot;Cum aliquid sequi cumque consequatur repellat est. Quae dolorem laudantium rerum voluptatibus amet. Corporis veritatis esse delectus perspiciatis non dolores rem.&quot;,
+            &quot;birth_date&quot;: &quot;2010-01-14&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Helmer Gislason&quot;,
+            &quot;bio&quot;: &quot;Cum reiciendis sint debitis earum. Porro voluptatem sed dolorem qui sit animi. Pariatur porro itaque a suscipit optio. Explicabo ratione ullam et unde ex omnis. Impedit ducimus soluta incidunt.&quot;,
+            &quot;birth_date&quot;: &quot;2020-10-11&quot;
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Mr. Alexis Fay V&quot;,
+            &quot;bio&quot;: &quot;Iusto tempore quas repellendus. Odio dolores at ipsam optio adipisci asperiores. Quas quibusdam consectetur ut soluta corporis maiores. Omnis sunt iusto aut impedit ipsa.&quot;,
+            &quot;birth_date&quot;: &quot;1990-12-11&quot;
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Jorge Ondricka&quot;,
+            &quot;bio&quot;: &quot;Eveniet ut temporibus ea quis voluptas ut aliquam. Est iusto molestias ut sed vero ratione et. Omnis iste qui porro error optio. Sunt voluptatem rerum voluptatem aut numquam blanditiis facere.&quot;,
+            &quot;birth_date&quot;: &quot;2022-07-18&quot;
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;name&quot;: &quot;Prof. Kayley Borer&quot;,
+            &quot;bio&quot;: &quot;Corrupti animi nesciunt omnis aperiam. Aut voluptatem deserunt ut corporis recusandae id.&quot;,
+            &quot;birth_date&quot;: &quot;1976-10-01&quot;
+        }
+    ],
+    &quot;message&quot;: &quot;List of all authors&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-authors" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-authors"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-authors"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-authors" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-authors">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-authors" data-method="GET"
+      data-path="api/v1/authors"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-authors', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-authors"
+                    onclick="tryItOut('GETapi-v1-authors');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-authors"
+                    onclick="cancelTryOut('GETapi-v1-authors');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-authors"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/authors</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-authors"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-authors"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="authors-GETapi-v1-authors--id-">Display the specified author.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-authors--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/authors/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"J.K. Rowling\",
+    \"bio\": \"British author, best known for the Harry Potter series.\",
+    \"birth_date\": \"1965-07-31\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/authors/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "J.K. Rowling",
+    "bio": "British author, best known for the Harry Potter series.",
+    "birth_date": "1965-07-31"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-authors--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;ttesting update&quot;,
+        &quot;bio&quot;: &quot;no bio needed&quot;,
+        &quot;birth_date&quot;: &quot;2024-09-11&quot;
+    },
+    &quot;message&quot;: &quot;Author retrieved&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-authors--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-authors--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-authors--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-authors--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-authors--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-authors--id-" data-method="GET"
+      data-path="api/v1/authors/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-authors--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-authors--id-"
+                    onclick="tryItOut('GETapi-v1-authors--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-authors--id-"
+                    onclick="cancelTryOut('GETapi-v1-authors--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-authors--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/authors/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-authors--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-authors--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-v1-authors--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the author. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="GETapi-v1-authors--id-"
+               value="J.K. Rowling"
+               data-component="body">
+    <br>
+<p>The new name of the author. Example: <code>J.K. Rowling</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="bio"                data-endpoint="GETapi-v1-authors--id-"
+               value="British author, best known for the Harry Potter series."
+               data-component="body">
+    <br>
+<p>The new biography of the author. Example: <code>British author, best known for the Harry Potter series.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="birth_date"                data-endpoint="GETapi-v1-authors--id-"
+               value="1965-07-31"
+               data-component="body">
+    <br>
+<p>The new birth date of the author. Example: <code>1965-07-31</code></p>
+        </div>
+        </form>
+
+                    <h2 id="authors-POSTapi-v1-authors">Store a newly created author in storage.</h2>
 
 <p>
 </p>
@@ -668,9 +727,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"paxbevvcdtnunnvyboqiyyqxy\",
-    \"bio\": \"reiciendis\",
-    \"birth_date\": \"2024-09-11T08:15:05\"
+    \"name\": \"J.K. Rowling\",
+    \"bio\": \"British author, best known for the Harry Potter series.\",
+    \"birth_date\": \"1965-07-31\"
 }"
 </code></pre></div>
 
@@ -686,9 +745,9 @@ const headers = {
 };
 
 let body = {
-    "name": "paxbevvcdtnunnvyboqiyyqxy",
-    "bio": "reiciendis",
-    "birth_date": "2024-09-11T08:15:05"
+    "name": "J.K. Rowling",
+    "bio": "British author, best known for the Harry Potter series.",
+    "birth_date": "1965-07-31"
 };
 
 fetch(url, {
@@ -777,10 +836,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-authors"
-               value="paxbevvcdtnunnvyboqiyyqxy"
+               value="J.K. Rowling"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>paxbevvcdtnunnvyboqiyyqxy</code></p>
+<p>The name of the author. Example: <code>J.K. Rowling</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
@@ -788,25 +847,25 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="bio"                data-endpoint="POSTapi-v1-authors"
-               value="reiciendis"
+               value="British author, best known for the Harry Potter series."
                data-component="body">
     <br>
-<p>Example: <code>reiciendis</code></p>
+<p>optional The biography of the author. Example: <code>British author, best known for the Harry Potter series.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>date</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="POSTapi-v1-authors"
-               value="2024-09-11T08:15:05"
+               value="1965-07-31"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-11T08:15:05</code></p>
+<p>optional The birth date of the author. Example: <code>1965-07-31</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-PUTapi-v1-authors--id-">Update the specified resource in storage.</h2>
+                    <h2 id="authors-PUTapi-v1-authors--id-">Update the specified author in storage.</h2>
 
 <p>
 </p>
@@ -823,9 +882,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ochncjkwcnzajuucqzcvsmom\",
-    \"bio\": \"officiis\",
-    \"birth_date\": \"2024-09-11T08:15:05\"
+    \"name\": \"zps\",
+    \"bio\": \"rem\",
+    \"birth_date\": \"2024-09-11T08:32:48\"
 }"
 </code></pre></div>
 
@@ -841,9 +900,9 @@ const headers = {
 };
 
 let body = {
-    "name": "ochncjkwcnzajuucqzcvsmom",
-    "bio": "officiis",
-    "birth_date": "2024-09-11T08:15:05"
+    "name": "zps",
+    "bio": "rem",
+    "birth_date": "2024-09-11T08:32:48"
 };
 
 fetch(url, {
@@ -855,7 +914,16 @@ fetch(url, {
 </span>
 
 <span id="example-responses-PUTapi-v1-authors--id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Author successfully deleted&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-PUTapi-v1-authors--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-v1-authors--id-"></span>:
@@ -944,10 +1012,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-authors--id-"
-               value="ochncjkwcnzajuucqzcvsmom"
+               value="zps"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ochncjkwcnzajuucqzcvsmom</code></p>
+<p>Must not be greater than 255 characters. Example: <code>zps</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
@@ -955,10 +1023,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="bio"                data-endpoint="PUTapi-v1-authors--id-"
-               value="officiis"
+               value="rem"
                data-component="body">
     <br>
-<p>Example: <code>officiis</code></p>
+<p>Example: <code>rem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
@@ -966,14 +1034,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-v1-authors--id-"
-               value="2024-09-11T08:15:05"
+               value="2024-09-11T08:32:48"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-11T08:15:05</code></p>
+<p>Must be a valid date. Example: <code>2024-09-11T08:32:48</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-v1-authors--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="authors-DELETEapi-v1-authors--id-">Remove the specified author from storage.</h2>
 
 <p>
 </p>
@@ -1009,7 +1077,16 @@ fetch(url, {
 </span>
 
 <span id="example-responses-DELETEapi-v1-authors--id-">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Author successfully deleted&quot;
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-DELETEapi-v1-authors--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-v1-authors--id-"></span>:
@@ -1093,7 +1170,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-v1-books">Display a listing of the resource.</h2>
+                <h1 id="books">Books</h1>
+
+    
+
+                                <h2 id="books-GETapi-v1-books">Display a listing of the Books.</h2>
 
 <p>
 </p>
@@ -1150,7 +1231,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.&quot;,
             &quot;publish_date&quot;: &quot;2001-08-16&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -1159,7 +1240,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.&quot;,
             &quot;publish_date&quot;: &quot;1983-02-04&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -1168,7 +1249,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.&quot;,
             &quot;publish_date&quot;: &quot;1972-02-27&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -1177,7 +1258,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.&quot;,
             &quot;publish_date&quot;: &quot;2012-01-02&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -1186,7 +1267,7 @@ access-control-allow-origin: *
             &quot;description&quot;: &quot;Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.&quot;,
             &quot;publish_date&quot;: &quot;2001-08-31&quot;,
             &quot;author&quot;: {
-                &quot;name&quot;: &quot;Madalyn Ward&quot;
+                &quot;name&quot;: &quot;ttesting update&quot;
             }
         },
         {
@@ -1548,51 +1629,6 @@ access-control-allow-origin: *
             &quot;author&quot;: {
                 &quot;name&quot;: &quot;Prof. Kayley Borer&quot;
             }
-        },
-        {
-            &quot;id&quot;: 46,
-            &quot;title&quot;: &quot;Soluta in.&quot;,
-            &quot;description&quot;: &quot;Libero voluptatibus id rerum reiciendis architecto qui suscipit. Dicta fugiat a alias iusto voluptatem ut et qui. Optio odit adipisci ut placeat.&quot;,
-            &quot;publish_date&quot;: &quot;2004-12-20&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Brando Goyette&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 47,
-            &quot;title&quot;: &quot;Qui eos.&quot;,
-            &quot;description&quot;: &quot;Fugiat consequatur eligendi ab est. Molestiae est sint odio non ex et veritatis. Modi quia eos maxime suscipit consectetur. Quasi dignissimos officiis voluptatem.&quot;,
-            &quot;publish_date&quot;: &quot;1989-12-20&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Brando Goyette&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 48,
-            &quot;title&quot;: &quot;Illum quis quia sint.&quot;,
-            &quot;description&quot;: &quot;Dolore ut enim optio doloribus fuga id inventore. Voluptatem sed quia corrupti eos fugit. Officiis accusamus aut quisquam reiciendis.&quot;,
-            &quot;publish_date&quot;: &quot;1998-05-06&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Brando Goyette&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 49,
-            &quot;title&quot;: &quot;Repudiandae quis quia qui.&quot;,
-            &quot;description&quot;: &quot;Eum neque ut quos recusandae. Magnam suscipit vitae id dolorem. Dolores quaerat a suscipit quaerat quo.&quot;,
-            &quot;publish_date&quot;: &quot;2005-09-06&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Brando Goyette&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 50,
-            &quot;title&quot;: &quot;Est alias vitae soluta.&quot;,
-            &quot;description&quot;: &quot;Vel repudiandae aut dolor eum illum natus. Architecto earum quia voluptates cum. Facilis est ut labore deleniti.&quot;,
-            &quot;publish_date&quot;: &quot;1986-10-05&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Brando Goyette&quot;
-            }
         }
     ],
     &quot;message&quot;: &quot;List of all books&quot;
@@ -1670,7 +1706,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-v1-books--id-">Display the specified resource.</h2>
+                    <h2 id="books-GETapi-v1-books--id-">Display the specified book.</h2>
 
 <p>
 </p>
@@ -1726,7 +1762,7 @@ access-control-allow-origin: *
         &quot;description&quot;: &quot;Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.&quot;,
         &quot;publish_date&quot;: &quot;2001-08-16&quot;,
         &quot;author&quot;: {
-            &quot;name&quot;: &quot;Madalyn Ward&quot;
+            &quot;name&quot;: &quot;ttesting update&quot;
         }
     },
     &quot;message&quot;: &quot;Book retrieved&quot;
@@ -1816,7 +1852,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-POSTapi-v1-books">Store a newly created resource in storage.</h2>
+                    <h2 id="books-POSTapi-v1-books">Store a newly created book in storage.</h2>
 
 <p>
 </p>
@@ -1833,10 +1869,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"eymtklrmvvellzuwrl\",
-    \"description\": \"Unde ut rerum rerum quae distinctio.\",
-    \"publish_date\": \"2024-09-11T08:15:05\",
-    \"author_id\": \"ipsa\"
+    \"title\": \"lz\",
+    \"description\": \"Esse nulla fuga in omnis veritatis omnis.\",
+    \"publish_date\": \"2024-09-11T08:32:48\",
+    \"author_id\": \"qui\"
 }"
 </code></pre></div>
 
@@ -1852,10 +1888,10 @@ const headers = {
 };
 
 let body = {
-    "title": "eymtklrmvvellzuwrl",
-    "description": "Unde ut rerum rerum quae distinctio.",
-    "publish_date": "2024-09-11T08:15:05",
-    "author_id": "ipsa"
+    "title": "lz",
+    "description": "Esse nulla fuga in omnis veritatis omnis.",
+    "publish_date": "2024-09-11T08:32:48",
+    "author_id": "qui"
 };
 
 fetch(url, {
@@ -1944,10 +1980,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-v1-books"
-               value="eymtklrmvvellzuwrl"
+               value="lz"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>eymtklrmvvellzuwrl</code></p>
+<p>Must not be greater than 255 characters. Example: <code>lz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1955,10 +1991,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-books"
-               value="Unde ut rerum rerum quae distinctio."
+               value="Esse nulla fuga in omnis veritatis omnis."
                data-component="body">
     <br>
-<p>Example: <code>Unde ut rerum rerum quae distinctio.</code></p>
+<p>Example: <code>Esse nulla fuga in omnis veritatis omnis.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>publish_date</code></b>&nbsp;&nbsp;
@@ -1966,10 +2002,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="publish_date"                data-endpoint="POSTapi-v1-books"
-               value="2024-09-11T08:15:05"
+               value="2024-09-11T08:32:48"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-11T08:15:05</code></p>
+<p>Must be a valid date. Example: <code>2024-09-11T08:32:48</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>author_id</code></b>&nbsp;&nbsp;
@@ -1977,14 +2013,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author_id"                data-endpoint="POSTapi-v1-books"
-               value="ipsa"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>ipsa</code></p>
+<p>Example: <code>qui</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-PUTapi-v1-books--id-">Update the specified resource in storage.</h2>
+                    <h2 id="books-PUTapi-v1-books--id-">Update the specified resource in storage.</h2>
 
 <p>
 </p>
@@ -2001,9 +2037,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"bexbkg\",
-    \"description\": \"Beatae eaque dolorem hic tempore.\",
-    \"publish_date\": \"2024-09-11T08:15:05\"
+    \"title\": \"mcsfqbppczqlwjcmmsutsubet\",
+    \"description\": \"Aperiam deserunt dicta numquam quidem.\",
+    \"publish_date\": \"2024-09-11T08:32:48\"
 }"
 </code></pre></div>
 
@@ -2019,9 +2055,9 @@ const headers = {
 };
 
 let body = {
-    "title": "bexbkg",
-    "description": "Beatae eaque dolorem hic tempore.",
-    "publish_date": "2024-09-11T08:15:05"
+    "title": "mcsfqbppczqlwjcmmsutsubet",
+    "description": "Aperiam deserunt dicta numquam quidem.",
+    "publish_date": "2024-09-11T08:32:48"
 };
 
 fetch(url, {
@@ -2122,10 +2158,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-v1-books--id-"
-               value="bexbkg"
+               value="mcsfqbppczqlwjcmmsutsubet"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>bexbkg</code></p>
+<p>Must not be greater than 255 characters. Example: <code>mcsfqbppczqlwjcmmsutsubet</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2133,10 +2169,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-books--id-"
-               value="Beatae eaque dolorem hic tempore."
+               value="Aperiam deserunt dicta numquam quidem."
                data-component="body">
     <br>
-<p>Example: <code>Beatae eaque dolorem hic tempore.</code></p>
+<p>Example: <code>Aperiam deserunt dicta numquam quidem.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>publish_date</code></b>&nbsp;&nbsp;
@@ -2144,10 +2180,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="publish_date"                data-endpoint="PUTapi-v1-books--id-"
-               value="2024-09-11T08:15:05"
+               value="2024-09-11T08:32:48"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-11T08:15:05</code></p>
+<p>Must be a valid date. Example: <code>2024-09-11T08:32:48</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>author_id</code></b>&nbsp;&nbsp;
@@ -2162,7 +2198,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-v1-books--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="books-DELETEapi-v1-books--id-">Remove the specified resource from storage.</h2>
 
 <p>
 </p>
