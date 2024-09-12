@@ -56,12 +56,12 @@ paths:
           in: query
           name: search
           description: 'Comma-separated list of fields to include in the response.'
-          example: ab
+          example: voluptas
           required: true
           schema:
             type: string
             description: 'Comma-separated list of fields to include in the response.'
-            example: ab
+            example: voluptas
       responses:
         200:
           description: ''
@@ -73,16 +73,9 @@ paths:
                   success: true
                   data:
                     current_page: 1
-                    data:
-                      -
-                        id: 7
-                        name: 'Keith Abshire'
-                        bio: 'Dolor eum voluptatibus cum voluptas quos id. Veritatis quaerat blanditiis aut dolorum. Voluptatibus dolores illum veniam. Molestias pariatur sed omnis animi iure.'
-                        birth_date: '2017-05-26'
-                        created_at: '2024-09-12T03:45:03.000000Z'
-                        updated_at: '2024-09-12T03:45:03.000000Z'
+                    data: []
                     first_page_url: 'http://localhost:8000/api/v1/authors?page=1'
-                    from: 1
+                    from: null
                     last_page: 1
                     last_page_url: 'http://localhost:8000/api/v1/authors?page=1'
                     links:
@@ -102,8 +95,8 @@ paths:
                     path: 'http://localhost:8000/api/v1/authors'
                     per_page: 10
                     prev_page_url: null
-                    to: 1
-                    total: 1
+                    to: null
+                    total: 0
                   message: 'List of all authors'
                 properties:
                   success:
@@ -117,41 +110,13 @@ paths:
                         example: 1
                       data:
                         type: array
-                        example:
-                          -
-                            id: 7
-                            name: 'Keith Abshire'
-                            bio: 'Dolor eum voluptatibus cum voluptas quos id. Veritatis quaerat blanditiis aut dolorum. Voluptatibus dolores illum veniam. Molestias pariatur sed omnis animi iure.'
-                            birth_date: '2017-05-26'
-                            created_at: '2024-09-12T03:45:03.000000Z'
-                            updated_at: '2024-09-12T03:45:03.000000Z'
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              example: 7
-                            name:
-                              type: string
-                              example: 'Keith Abshire'
-                            bio:
-                              type: string
-                              example: 'Dolor eum voluptatibus cum voluptas quos id. Veritatis quaerat blanditiis aut dolorum. Voluptatibus dolores illum veniam. Molestias pariatur sed omnis animi iure.'
-                            birth_date:
-                              type: string
-                              example: '2017-05-26'
-                            created_at:
-                              type: string
-                              example: '2024-09-12T03:45:03.000000Z'
-                            updated_at:
-                              type: string
-                              example: '2024-09-12T03:45:03.000000Z'
+                        example: []
                       first_page_url:
                         type: string
                         example: 'http://localhost:8000/api/v1/authors?page=1'
                       from:
-                        type: integer
-                        example: 1
+                        type: string
+                        example: null
                       last_page:
                         type: integer
                         example: 1
@@ -198,11 +163,11 @@ paths:
                         type: string
                         example: null
                       to:
-                        type: integer
-                        example: 1
+                        type: string
+                        example: null
                       total:
                         type: integer
-                        example: 1
+                        example: 0
                   message:
                     type: string
                     example: 'List of all authors'
@@ -227,15 +192,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: j
+                  example: dtbagyct
                 bio:
                   type: string
                   description: ''
-                  example: vero
+                  example: sunt
                 birth_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-09-12T06:52:25'
+                  example: '2024-09-12T07:58:45'
               required:
                 - name
       security: []
@@ -246,7 +211,7 @@ paths:
       description: ''
       parameters: []
       responses:
-        404:
+        200:
           description: ''
           content:
             application/json:
@@ -254,18 +219,34 @@ paths:
                 type: object
                 example:
                   success: true
-                  data: null
-                  message: 'Author not found'
+                  data:
+                    id: 1
+                    name: 'Mr. Alec Hegmann Jr.'
+                    bio: 'Commodi fugit aut consequatur voluptas et numquam qui. Assumenda quia aut libero exercitationem qui neque quam. Eius rerum sint quod expedita ratione. Quisquam odio incidunt aut autem.'
+                    birth_date: '1983-11-15'
+                  message: 'Author retrieved'
                 properties:
                   success:
                     type: boolean
                     example: true
                   data:
-                    type: string
-                    example: null
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Mr. Alec Hegmann Jr.'
+                      bio:
+                        type: string
+                        example: 'Commodi fugit aut consequatur voluptas et numquam qui. Assumenda quia aut libero exercitationem qui neque quam. Eius rerum sint quod expedita ratione. Quisquam odio incidunt aut autem.'
+                      birth_date:
+                        type: string
+                        example: '1983-11-15'
                   message:
                     type: string
-                    example: 'Author not found'
+                    example: 'Author retrieved'
       tags:
         - Authors
       security: []
@@ -299,15 +280,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: uxewtibeyexjmolgzv
+                  example: sazkgbwyrhtcpfzsqlpdkqrib
                 bio:
                   type: string
                   description: ''
-                  example: aut
+                  example: iure
                 birth_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-09-12T06:52:25'
+                  example: '2024-09-12T07:58:45'
               required:
                 - name
       security: []
@@ -351,12 +332,12 @@ paths:
           in: query
           name: search
           description: 'Comma-separated list of fields to include in the response.'
-          example: asperiores
+          example: dignissimos
           required: true
           schema:
             type: string
             description: 'Comma-separated list of fields to include in the response.'
-            example: asperiores
+            example: dignissimos
       responses:
         200:
           description: ''
@@ -370,35 +351,35 @@ paths:
                     current_page: 1
                     data:
                       -
-                        id: 26
-                        title: 'Dicta ea asperiores.'
-                        description: 'Fugiat incidunt et corporis consequatur et laborum. Nobis sit laboriosam modi harum et id. Ut nihil quaerat voluptate autem maxime. Ab debitis est quam.'
-                        publish_date: '1973-02-17'
-                        author_id: 17
-                        created_at: '2024-09-12T04:25:35.000000Z'
-                        updated_at: '2024-09-12T04:25:35.000000Z'
+                        id: 25
+                        title: 'Veritatis reprehenderit dignissimos culpa.'
+                        description: 'Enim eius est amet. Beatae error porro vero eum. Vero est aut voluptates. Hic ut illum sit.'
+                        publish_date: '1991-12-04'
+                        author_id: 5
+                        created_at: '2024-09-12T07:41:35.000000Z'
+                        updated_at: '2024-09-12T07:41:35.000000Z'
                         author:
-                          id: 17
-                          name: 'Dr. Jared Swift MD'
-                          bio: 'Voluptatem rerum ipsum hic a maiores maxime vitae. Reprehenderit dolorem dolor aut quo ut ipsum non. Rerum vel maiores ut est. Saepe soluta voluptatem eveniet voluptatum voluptatem eum.'
-                          birth_date: '2023-12-12'
-                          created_at: '2024-09-12T04:25:35.000000Z'
-                          updated_at: '2024-09-12T04:25:35.000000Z'
+                          id: 5
+                          name: 'Stacy McGlynn'
+                          bio: 'Est est est laboriosam ut quam sapiente ullam iste. Eos consequuntur sit laboriosam dolore quia omnis dolor laborum. Quae eligendi id vel beatae. Necessitatibus porro blanditiis ea maiores atque sint.'
+                          birth_date: '2015-09-27'
+                          created_at: '2024-09-12T07:41:35.000000Z'
+                          updated_at: '2024-09-12T07:41:35.000000Z'
                       -
-                        id: 29
-                        title: 'Ratione et asperiores vel architecto.'
-                        description: 'Itaque consectetur consequuntur sunt explicabo. Architecto necessitatibus voluptates magni est maiores recusandae. Et et omnis autem omnis omnis soluta. At molestiae sint quaerat aperiam laboriosam voluptas.'
-                        publish_date: '1986-06-03'
-                        author_id: 18
-                        created_at: '2024-09-12T04:25:35.000000Z'
-                        updated_at: '2024-09-12T04:25:35.000000Z'
+                        id: 38
+                        title: 'Sit dignissimos in quis.'
+                        description: 'Ea voluptatem nam nihil est id adipisci. Et quo sequi quos neque doloremque. Et nobis tempore necessitatibus explicabo vero cum nam. Doloremque aut exercitationem neque veritatis libero est.'
+                        publish_date: '1992-05-14'
+                        author_id: 8
+                        created_at: '2024-09-12T07:41:35.000000Z'
+                        updated_at: '2024-09-12T07:41:35.000000Z'
                         author:
-                          id: 18
-                          name: 'Jackeline Baumbach'
-                          bio: 'Impedit iste ut excepturi. Ipsam officiis praesentium sint quod architecto perferendis rerum. Quam doloribus cupiditate sint qui minima. Ullam amet nostrum fuga eligendi.'
-                          birth_date: '1987-01-03'
-                          created_at: '2024-09-12T04:25:35.000000Z'
-                          updated_at: '2024-09-12T04:25:35.000000Z'
+                          id: 8
+                          name: 'Prof. Douglas Wilkinson DDS'
+                          bio: 'Ratione natus similique eos inventore tempore consequatur sit. Qui expedita quo molestiae eveniet eos quae suscipit id. Voluptatem laudantium qui aut ex vero. Velit tempore mollitia delectus.'
+                          birth_date: '2010-11-18'
+                          created_at: '2024-09-12T07:41:35.000000Z'
+                          updated_at: '2024-09-12T07:41:35.000000Z'
                     first_page_url: 'http://localhost:8000/api/v1/books?page=1'
                     from: 1
                     last_page: 1
@@ -437,80 +418,80 @@ paths:
                         type: array
                         example:
                           -
-                            id: 26
-                            title: 'Dicta ea asperiores.'
-                            description: 'Fugiat incidunt et corporis consequatur et laborum. Nobis sit laboriosam modi harum et id. Ut nihil quaerat voluptate autem maxime. Ab debitis est quam.'
-                            publish_date: '1973-02-17'
-                            author_id: 17
-                            created_at: '2024-09-12T04:25:35.000000Z'
-                            updated_at: '2024-09-12T04:25:35.000000Z'
+                            id: 25
+                            title: 'Veritatis reprehenderit dignissimos culpa.'
+                            description: 'Enim eius est amet. Beatae error porro vero eum. Vero est aut voluptates. Hic ut illum sit.'
+                            publish_date: '1991-12-04'
+                            author_id: 5
+                            created_at: '2024-09-12T07:41:35.000000Z'
+                            updated_at: '2024-09-12T07:41:35.000000Z'
                             author:
-                              id: 17
-                              name: 'Dr. Jared Swift MD'
-                              bio: 'Voluptatem rerum ipsum hic a maiores maxime vitae. Reprehenderit dolorem dolor aut quo ut ipsum non. Rerum vel maiores ut est. Saepe soluta voluptatem eveniet voluptatum voluptatem eum.'
-                              birth_date: '2023-12-12'
-                              created_at: '2024-09-12T04:25:35.000000Z'
-                              updated_at: '2024-09-12T04:25:35.000000Z'
+                              id: 5
+                              name: 'Stacy McGlynn'
+                              bio: 'Est est est laboriosam ut quam sapiente ullam iste. Eos consequuntur sit laboriosam dolore quia omnis dolor laborum. Quae eligendi id vel beatae. Necessitatibus porro blanditiis ea maiores atque sint.'
+                              birth_date: '2015-09-27'
+                              created_at: '2024-09-12T07:41:35.000000Z'
+                              updated_at: '2024-09-12T07:41:35.000000Z'
                           -
-                            id: 29
-                            title: 'Ratione et asperiores vel architecto.'
-                            description: 'Itaque consectetur consequuntur sunt explicabo. Architecto necessitatibus voluptates magni est maiores recusandae. Et et omnis autem omnis omnis soluta. At molestiae sint quaerat aperiam laboriosam voluptas.'
-                            publish_date: '1986-06-03'
-                            author_id: 18
-                            created_at: '2024-09-12T04:25:35.000000Z'
-                            updated_at: '2024-09-12T04:25:35.000000Z'
+                            id: 38
+                            title: 'Sit dignissimos in quis.'
+                            description: 'Ea voluptatem nam nihil est id adipisci. Et quo sequi quos neque doloremque. Et nobis tempore necessitatibus explicabo vero cum nam. Doloremque aut exercitationem neque veritatis libero est.'
+                            publish_date: '1992-05-14'
+                            author_id: 8
+                            created_at: '2024-09-12T07:41:35.000000Z'
+                            updated_at: '2024-09-12T07:41:35.000000Z'
                             author:
-                              id: 18
-                              name: 'Jackeline Baumbach'
-                              bio: 'Impedit iste ut excepturi. Ipsam officiis praesentium sint quod architecto perferendis rerum. Quam doloribus cupiditate sint qui minima. Ullam amet nostrum fuga eligendi.'
-                              birth_date: '1987-01-03'
-                              created_at: '2024-09-12T04:25:35.000000Z'
-                              updated_at: '2024-09-12T04:25:35.000000Z'
+                              id: 8
+                              name: 'Prof. Douglas Wilkinson DDS'
+                              bio: 'Ratione natus similique eos inventore tempore consequatur sit. Qui expedita quo molestiae eveniet eos quae suscipit id. Voluptatem laudantium qui aut ex vero. Velit tempore mollitia delectus.'
+                              birth_date: '2010-11-18'
+                              created_at: '2024-09-12T07:41:35.000000Z'
+                              updated_at: '2024-09-12T07:41:35.000000Z'
                         items:
                           type: object
                           properties:
                             id:
                               type: integer
-                              example: 26
+                              example: 25
                             title:
                               type: string
-                              example: 'Dicta ea asperiores.'
+                              example: 'Veritatis reprehenderit dignissimos culpa.'
                             description:
                               type: string
-                              example: 'Fugiat incidunt et corporis consequatur et laborum. Nobis sit laboriosam modi harum et id. Ut nihil quaerat voluptate autem maxime. Ab debitis est quam.'
+                              example: 'Enim eius est amet. Beatae error porro vero eum. Vero est aut voluptates. Hic ut illum sit.'
                             publish_date:
                               type: string
-                              example: '1973-02-17'
+                              example: '1991-12-04'
                             author_id:
                               type: integer
-                              example: 17
+                              example: 5
                             created_at:
                               type: string
-                              example: '2024-09-12T04:25:35.000000Z'
+                              example: '2024-09-12T07:41:35.000000Z'
                             updated_at:
                               type: string
-                              example: '2024-09-12T04:25:35.000000Z'
+                              example: '2024-09-12T07:41:35.000000Z'
                             author:
                               type: object
                               properties:
                                 id:
                                   type: integer
-                                  example: 17
+                                  example: 5
                                 name:
                                   type: string
-                                  example: 'Dr. Jared Swift MD'
+                                  example: 'Stacy McGlynn'
                                 bio:
                                   type: string
-                                  example: 'Voluptatem rerum ipsum hic a maiores maxime vitae. Reprehenderit dolorem dolor aut quo ut ipsum non. Rerum vel maiores ut est. Saepe soluta voluptatem eveniet voluptatum voluptatem eum.'
+                                  example: 'Est est est laboriosam ut quam sapiente ullam iste. Eos consequuntur sit laboriosam dolore quia omnis dolor laborum. Quae eligendi id vel beatae. Necessitatibus porro blanditiis ea maiores atque sint.'
                                 birth_date:
                                   type: string
-                                  example: '2023-12-12'
+                                  example: '2015-09-27'
                                 created_at:
                                   type: string
-                                  example: '2024-09-12T04:25:35.000000Z'
+                                  example: '2024-09-12T07:41:35.000000Z'
                                 updated_at:
                                   type: string
-                                  example: '2024-09-12T04:25:35.000000Z'
+                                  example: '2024-09-12T07:41:35.000000Z'
                       first_page_url:
                         type: string
                         example: 'http://localhost:8000/api/v1/books?page=1'
@@ -592,19 +573,19 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ysycfwvff
+                  example: vukb
                 description:
                   type: string
                   description: ''
-                  example: 'Nihil et hic non aliquid quisquam quo.'
+                  example: 'Aut et qui quia vel mollitia voluptas.'
                 publish_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-09-12T06:52:25'
+                  example: '2024-09-12T07:58:45'
                 author_id:
                   type: string
                   description: ''
-                  example: labore
+                  example: beatae
               required:
                 - title
                 - author_id
@@ -626,11 +607,11 @@ paths:
                   success: true
                   data:
                     id: 1
-                    title: 'Vitae dolore quidem aliquid.'
-                    description: 'Fugiat unde illum eaque distinctio expedita excepturi cumque iste. Aut voluptatem sed rem ea ullam debitis dicta. Libero eaque dolorem magnam iste quis et. Ipsam illo et officia et ducimus.'
-                    publish_date: '2021-02-23'
+                    title: 'Laboriosam qui aut.'
+                    description: 'Ad est enim sed et animi quidem. Esse exercitationem fugit veritatis doloribus. Possimus quaerat veniam voluptas eos amet qui suscipit. Explicabo delectus harum neque amet voluptatibus eius.'
+                    publish_date: '2023-03-30'
                     author:
-                      name: 'Bridgette Stiedemann'
+                      name: 'Mr. Alec Hegmann Jr.'
                   message: 'Book retrieved'
                 properties:
                   success:
@@ -644,19 +625,19 @@ paths:
                         example: 1
                       title:
                         type: string
-                        example: 'Vitae dolore quidem aliquid.'
+                        example: 'Laboriosam qui aut.'
                       description:
                         type: string
-                        example: 'Fugiat unde illum eaque distinctio expedita excepturi cumque iste. Aut voluptatem sed rem ea ullam debitis dicta. Libero eaque dolorem magnam iste quis et. Ipsam illo et officia et ducimus.'
+                        example: 'Ad est enim sed et animi quidem. Esse exercitationem fugit veritatis doloribus. Possimus quaerat veniam voluptas eos amet qui suscipit. Explicabo delectus harum neque amet voluptatibus eius.'
                       publish_date:
                         type: string
-                        example: '2021-02-23'
+                        example: '2023-03-30'
                       author:
                         type: object
                         properties:
                           name:
                             type: string
-                            example: 'Bridgette Stiedemann'
+                            example: 'Mr. Alec Hegmann Jr.'
                   message:
                     type: string
                     example: 'Book retrieved'
@@ -681,15 +662,15 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: hgqbxixhe
+                  example: ynfb
                 description:
                   type: string
                   description: ''
-                  example: 'Vel iusto veniam autem mollitia.'
+                  example: 'Sint accusantium voluptatem est minus hic doloremque doloribus.'
                 publish_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-09-12T06:52:25'
+                  example: '2024-09-12T07:58:45'
                 author_id:
                   type: string
                   description: ''

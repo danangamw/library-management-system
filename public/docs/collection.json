@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Library Nanagement System",
-        "_postman_id": "7fd6b6b1-7608-4ac4-aa26-8e5ee0000ec9",
+        "_postman_id": "fbb31a9b-7805-4498-961f-f90460b96178",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -90,12 +90,12 @@
                             "query": [
                                 {
                                     "key": "search",
-                                    "value": "ab",
+                                    "value": "voluptas",
                                     "description": "Comma-separated list of fields to include in the response.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/authors?search=ab"
+                            "raw": "{{baseUrl}}\/api\/v1\/authors?search=voluptas"
                         },
                         "method": "GET",
                         "header": [
@@ -131,7 +131,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":7,\"name\":\"Keith Abshire\",\"bio\":\"Dolor eum voluptatibus cum voluptas quos id. Veritatis quaerat blanditiis aut dolorum. Voluptatibus dolores illum veniam. Molestias pariatur sed omnis animi iure.\",\"birth_date\":\"2017-05-26\",\"created_at\":\"2024-09-12T03:45:03.000000Z\",\"updated_at\":\"2024-09-12T03:45:03.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/authors?page=1\",\"from\":1,\"last_page\":1,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/authors?page=1\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/authors?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":null,\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/authors\",\"per_page\":10,\"prev_page_url\":null,\"to\":1,\"total\":1},\"message\":\"List of all authors\"}",
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/authors?page=1\",\"from\":null,\"last_page\":1,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/authors?page=1\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/authors?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":null,\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/authors\",\"per_page\":10,\"prev_page_url\":null,\"to\":null,\"total\":0},\"message\":\"List of all authors\"}",
                             "name": ""
                         }
                     ]
@@ -186,8 +186,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\"success\":true,\"data\":null,\"message\":\"Author not found\"}",
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"Mr. Alec Hegmann Jr.\",\"bio\":\"Commodi fugit aut consequatur voluptas et numquam qui. Assumenda quia aut libero exercitationem qui neque quam. Eius rerum sint quod expedita ratione. Quisquam odio incidunt aut autem.\",\"birth_date\":\"1983-11-15\"},\"message\":\"Author retrieved\"}",
                             "name": ""
                         }
                     ]
@@ -214,7 +214,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"j\",\"bio\":\"vero\",\"birth_date\":\"2024-09-12T06:52:25\"}"
+                            "raw": "{\"name\":\"dtbagyct\",\"bio\":\"sunt\",\"birth_date\":\"2024-09-12T07:58:45\"}"
                         },
                         "description": "",
                         "auth": {
@@ -253,7 +253,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"uxewtibeyexjmolgzv\",\"bio\":\"aut\",\"birth_date\":\"2024-09-12T06:52:25\"}"
+                            "raw": "{\"name\":\"sazkgbwyrhtcpfzsqlpdkqrib\",\"bio\":\"iure\",\"birth_date\":\"2024-09-12T07:58:45\"}"
                         },
                         "description": "",
                         "auth": {
@@ -327,12 +327,12 @@
                             "query": [
                                 {
                                     "key": "search",
-                                    "value": "asperiores",
+                                    "value": "dignissimos",
                                     "description": "Comma-separated list of fields to include in the response.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/books?search=asperiores"
+                            "raw": "{{baseUrl}}\/api\/v1\/books?search=dignissimos"
                         },
                         "method": "GET",
                         "header": [
@@ -368,7 +368,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":26,\"title\":\"Dicta ea asperiores.\",\"description\":\"Fugiat incidunt et corporis consequatur et laborum. Nobis sit laboriosam modi harum et id. Ut nihil quaerat voluptate autem maxime. Ab debitis est quam.\",\"publish_date\":\"1973-02-17\",\"author_id\":17,\"created_at\":\"2024-09-12T04:25:35.000000Z\",\"updated_at\":\"2024-09-12T04:25:35.000000Z\",\"author\":{\"id\":17,\"name\":\"Dr. Jared Swift MD\",\"bio\":\"Voluptatem rerum ipsum hic a maiores maxime vitae. Reprehenderit dolorem dolor aut quo ut ipsum non. Rerum vel maiores ut est. Saepe soluta voluptatem eveniet voluptatum voluptatem eum.\",\"birth_date\":\"2023-12-12\",\"created_at\":\"2024-09-12T04:25:35.000000Z\",\"updated_at\":\"2024-09-12T04:25:35.000000Z\"}},{\"id\":29,\"title\":\"Ratione et asperiores vel architecto.\",\"description\":\"Itaque consectetur consequuntur sunt explicabo. Architecto necessitatibus voluptates magni est maiores recusandae. Et et omnis autem omnis omnis soluta. At molestiae sint quaerat aperiam laboriosam voluptas.\",\"publish_date\":\"1986-06-03\",\"author_id\":18,\"created_at\":\"2024-09-12T04:25:35.000000Z\",\"updated_at\":\"2024-09-12T04:25:35.000000Z\",\"author\":{\"id\":18,\"name\":\"Jackeline Baumbach\",\"bio\":\"Impedit iste ut excepturi. Ipsam officiis praesentium sint quod architecto perferendis rerum. Quam doloribus cupiditate sint qui minima. Ullam amet nostrum fuga eligendi.\",\"birth_date\":\"1987-01-03\",\"created_at\":\"2024-09-12T04:25:35.000000Z\",\"updated_at\":\"2024-09-12T04:25:35.000000Z\"}}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/books?page=1\",\"from\":1,\"last_page\":1,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/books?page=1\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/books?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":null,\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/books\",\"per_page\":10,\"prev_page_url\":null,\"to\":2,\"total\":2},\"message\":\"List of all books\"}",
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":25,\"title\":\"Veritatis reprehenderit dignissimos culpa.\",\"description\":\"Enim eius est amet. Beatae error porro vero eum. Vero est aut voluptates. Hic ut illum sit.\",\"publish_date\":\"1991-12-04\",\"author_id\":5,\"created_at\":\"2024-09-12T07:41:35.000000Z\",\"updated_at\":\"2024-09-12T07:41:35.000000Z\",\"author\":{\"id\":5,\"name\":\"Stacy McGlynn\",\"bio\":\"Est est est laboriosam ut quam sapiente ullam iste. Eos consequuntur sit laboriosam dolore quia omnis dolor laborum. Quae eligendi id vel beatae. Necessitatibus porro blanditiis ea maiores atque sint.\",\"birth_date\":\"2015-09-27\",\"created_at\":\"2024-09-12T07:41:35.000000Z\",\"updated_at\":\"2024-09-12T07:41:35.000000Z\"}},{\"id\":38,\"title\":\"Sit dignissimos in quis.\",\"description\":\"Ea voluptatem nam nihil est id adipisci. Et quo sequi quos neque doloremque. Et nobis tempore necessitatibus explicabo vero cum nam. Doloremque aut exercitationem neque veritatis libero est.\",\"publish_date\":\"1992-05-14\",\"author_id\":8,\"created_at\":\"2024-09-12T07:41:35.000000Z\",\"updated_at\":\"2024-09-12T07:41:35.000000Z\",\"author\":{\"id\":8,\"name\":\"Prof. Douglas Wilkinson DDS\",\"bio\":\"Ratione natus similique eos inventore tempore consequatur sit. Qui expedita quo molestiae eveniet eos quae suscipit id. Voluptatem laudantium qui aut ex vero. Velit tempore mollitia delectus.\",\"birth_date\":\"2010-11-18\",\"created_at\":\"2024-09-12T07:41:35.000000Z\",\"updated_at\":\"2024-09-12T07:41:35.000000Z\"}}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/books?page=1\",\"from\":1,\"last_page\":1,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/books?page=1\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/books?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":null,\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/books\",\"per_page\":10,\"prev_page_url\":null,\"to\":2,\"total\":2},\"message\":\"List of all books\"}",
                             "name": ""
                         }
                     ]
@@ -424,7 +424,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":{\"id\":1,\"title\":\"Vitae dolore quidem aliquid.\",\"description\":\"Fugiat unde illum eaque distinctio expedita excepturi cumque iste. Aut voluptatem sed rem ea ullam debitis dicta. Libero eaque dolorem magnam iste quis et. Ipsam illo et officia et ducimus.\",\"publish_date\":\"2021-02-23\",\"author\":{\"name\":\"Bridgette Stiedemann\"}},\"message\":\"Book retrieved\"}",
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"title\":\"Laboriosam qui aut.\",\"description\":\"Ad est enim sed et animi quidem. Esse exercitationem fugit veritatis doloribus. Possimus quaerat veniam voluptas eos amet qui suscipit. Explicabo delectus harum neque amet voluptatibus eius.\",\"publish_date\":\"2023-03-30\",\"author\":{\"name\":\"Mr. Alec Hegmann Jr.\"}},\"message\":\"Book retrieved\"}",
                             "name": ""
                         }
                     ]
@@ -451,7 +451,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"ysycfwvff\",\"description\":\"Nihil et hic non aliquid quisquam quo.\",\"publish_date\":\"2024-09-12T06:52:25\",\"author_id\":\"labore\"}"
+                            "raw": "{\"title\":\"vukb\",\"description\":\"Aut et qui quia vel mollitia voluptas.\",\"publish_date\":\"2024-09-12T07:58:45\",\"author_id\":\"beatae\"}"
                         },
                         "description": "",
                         "auth": {
@@ -490,7 +490,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"hgqbxixhe\",\"description\":\"Vel iusto veniam autem mollitia.\",\"publish_date\":\"2024-09-12T06:52:25\"}"
+                            "raw": "{\"title\":\"ynfb\",\"description\":\"Sint accusantium voluptatem est minus hic doloremque doloribus.\",\"publish_date\":\"2024-09-12T07:58:45\"}"
                         },
                         "description": "",
                         "auth": {

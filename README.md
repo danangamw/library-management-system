@@ -90,6 +90,12 @@ Install predis. Run the following command on your terminal to install Predis:
 composer require predis/predis
 ```
 
+On .env file change this section:
+
+```env
+REDIS_CLIENT=predis
+```
+
 Ensure Redis is installed and running. Update the .env file with your Redis configuration:
 
 ```env
@@ -136,7 +142,7 @@ By default, the application will be available at http://localhost:8000
 
 Open your web browser and navigate to http://localhost:8000 to access the application.
 
-## Running Tests
+## Publish API Documentation
 
 First, add scribe package via Composer:
 
@@ -156,10 +162,34 @@ Run the command to generate your docs.
 php artisan scribe:generate
 ```
 
-To run the tests provided with the application:
+## Running Tests
+
+### First, add phpunit package via Composer:
+
+```bash
+composer require --dev phpunit/phpunit
+```
+
+\*Test case already written in tests/Feature directory
+
+### To run the tests provided with the application:
 
 ```bash
 php artisan test
+```
+
+\*if unit test fail to work. Create a dummy unit with this command:
+
+```bash
+php artisan make:test ExampleTest --unit
+```
+
+# Important
+
+## After doing all those command run this command:
+
+```bash
+php artisan config:cache
 ```
 
 ## Troubleshooting

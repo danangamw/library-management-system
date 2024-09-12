@@ -306,7 +306,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/authors?search=ab" \
+    --get "http://localhost:8000/api/v1/authors?search=voluptas" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -317,7 +317,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "search": "ab",
+    "search": "voluptas",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -351,18 +351,9 @@ access-control-allow-origin: *
     &quot;success&quot;: true,
     &quot;data&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;data&quot;: [
-            {
-                &quot;id&quot;: 7,
-                &quot;name&quot;: &quot;Keith Abshire&quot;,
-                &quot;bio&quot;: &quot;Dolor eum voluptatibus cum voluptas quos id. Veritatis quaerat blanditiis aut dolorum. Voluptatibus dolores illum veniam. Molestias pariatur sed omnis animi iure.&quot;,
-                &quot;birth_date&quot;: &quot;2017-05-26&quot;,
-                &quot;created_at&quot;: &quot;2024-09-12T03:45:03.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2024-09-12T03:45:03.000000Z&quot;
-            }
-        ],
+        &quot;data&quot;: [],
         &quot;first_page_url&quot;: &quot;http://localhost:8000/api/v1/authors?page=1&quot;,
-        &quot;from&quot;: 1,
+        &quot;from&quot;: null,
         &quot;last_page&quot;: 1,
         &quot;last_page_url&quot;: &quot;http://localhost:8000/api/v1/authors?page=1&quot;,
         &quot;links&quot;: [
@@ -386,8 +377,8 @@ access-control-allow-origin: *
         &quot;path&quot;: &quot;http://localhost:8000/api/v1/authors&quot;,
         &quot;per_page&quot;: 10,
         &quot;prev_page_url&quot;: null,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
+        &quot;to&quot;: null,
+        &quot;total&quot;: 0
     },
     &quot;message&quot;: &quot;List of all authors&quot;
 }</code>
@@ -469,10 +460,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="search"                data-endpoint="GETapi-v1-authors"
-               value="ab"
+               value="voluptas"
                data-component="query">
     <br>
-<p>Comma-separated list of fields to include in the response. Example: <code>ab</code></p>
+<p>Comma-separated list of fields to include in the response. Example: <code>voluptas</code></p>
             </div>
                 </form>
 
@@ -513,7 +504,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-authors--id-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -526,8 +517,13 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: null,
-    &quot;message&quot;: &quot;Author not found&quot;
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Mr. Alec Hegmann Jr.&quot;,
+        &quot;bio&quot;: &quot;Commodi fugit aut consequatur voluptas et numquam qui. Assumenda quia aut libero exercitationem qui neque quam. Eius rerum sint quod expedita ratione. Quisquam odio incidunt aut autem.&quot;,
+        &quot;birth_date&quot;: &quot;1983-11-15&quot;
+    },
+    &quot;message&quot;: &quot;Author retrieved&quot;
 }</code>
  </pre>
     </span>
@@ -631,9 +627,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"j\",
-    \"bio\": \"vero\",
-    \"birth_date\": \"2024-09-12T06:52:25\"
+    \"name\": \"dtbagyct\",
+    \"bio\": \"sunt\",
+    \"birth_date\": \"2024-09-12T07:58:45\"
 }"
 </code></pre></div>
 
@@ -649,9 +645,9 @@ const headers = {
 };
 
 let body = {
-    "name": "j",
-    "bio": "vero",
-    "birth_date": "2024-09-12T06:52:25"
+    "name": "dtbagyct",
+    "bio": "sunt",
+    "birth_date": "2024-09-12T07:58:45"
 };
 
 fetch(url, {
@@ -740,10 +736,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-authors"
-               value="j"
+               value="dtbagyct"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>j</code></p>
+<p>Must not be greater than 255 characters. Example: <code>dtbagyct</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
@@ -751,10 +747,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="bio"                data-endpoint="POSTapi-v1-authors"
-               value="vero"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>vero</code></p>
+<p>Example: <code>sunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
@@ -762,10 +758,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="POSTapi-v1-authors"
-               value="2024-09-12T06:52:25"
+               value="2024-09-12T07:58:45"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-12T06:52:25</code></p>
+<p>Must be a valid date. Example: <code>2024-09-12T07:58:45</code></p>
         </div>
         </form>
 
@@ -786,9 +782,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"uxewtibeyexjmolgzv\",
-    \"bio\": \"aut\",
-    \"birth_date\": \"2024-09-12T06:52:25\"
+    \"name\": \"sazkgbwyrhtcpfzsqlpdkqrib\",
+    \"bio\": \"iure\",
+    \"birth_date\": \"2024-09-12T07:58:45\"
 }"
 </code></pre></div>
 
@@ -804,9 +800,9 @@ const headers = {
 };
 
 let body = {
-    "name": "uxewtibeyexjmolgzv",
-    "bio": "aut",
-    "birth_date": "2024-09-12T06:52:25"
+    "name": "sazkgbwyrhtcpfzsqlpdkqrib",
+    "bio": "iure",
+    "birth_date": "2024-09-12T07:58:45"
 };
 
 fetch(url, {
@@ -916,10 +912,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-authors--id-"
-               value="uxewtibeyexjmolgzv"
+               value="sazkgbwyrhtcpfzsqlpdkqrib"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>uxewtibeyexjmolgzv</code></p>
+<p>Must not be greater than 255 characters. Example: <code>sazkgbwyrhtcpfzsqlpdkqrib</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
@@ -927,10 +923,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="bio"                data-endpoint="PUTapi-v1-authors--id-"
-               value="aut"
+               value="iure"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>iure</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
@@ -938,10 +934,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-v1-authors--id-"
-               value="2024-09-12T06:52:25"
+               value="2024-09-12T07:58:45"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-12T06:52:25</code></p>
+<p>Must be a valid date. Example: <code>2024-09-12T07:58:45</code></p>
         </div>
         </form>
 
@@ -1091,7 +1087,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/books?search=asperiores" \
+    --get "http://localhost:8000/api/v1/books?search=dignissimos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1102,7 +1098,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "search": "asperiores",
+    "search": "dignissimos",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -1138,37 +1134,37 @@ access-control-allow-origin: *
         &quot;current_page&quot;: 1,
         &quot;data&quot;: [
             {
-                &quot;id&quot;: 26,
-                &quot;title&quot;: &quot;Dicta ea asperiores.&quot;,
-                &quot;description&quot;: &quot;Fugiat incidunt et corporis consequatur et laborum. Nobis sit laboriosam modi harum et id. Ut nihil quaerat voluptate autem maxime. Ab debitis est quam.&quot;,
-                &quot;publish_date&quot;: &quot;1973-02-17&quot;,
-                &quot;author_id&quot;: 17,
-                &quot;created_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
+                &quot;id&quot;: 25,
+                &quot;title&quot;: &quot;Veritatis reprehenderit dignissimos culpa.&quot;,
+                &quot;description&quot;: &quot;Enim eius est amet. Beatae error porro vero eum. Vero est aut voluptates. Hic ut illum sit.&quot;,
+                &quot;publish_date&quot;: &quot;1991-12-04&quot;,
+                &quot;author_id&quot;: 5,
+                &quot;created_at&quot;: &quot;2024-09-12T07:41:35.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-09-12T07:41:35.000000Z&quot;,
                 &quot;author&quot;: {
-                    &quot;id&quot;: 17,
-                    &quot;name&quot;: &quot;Dr. Jared Swift MD&quot;,
-                    &quot;bio&quot;: &quot;Voluptatem rerum ipsum hic a maiores maxime vitae. Reprehenderit dolorem dolor aut quo ut ipsum non. Rerum vel maiores ut est. Saepe soluta voluptatem eveniet voluptatum voluptatem eum.&quot;,
-                    &quot;birth_date&quot;: &quot;2023-12-12&quot;,
-                    &quot;created_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;
+                    &quot;id&quot;: 5,
+                    &quot;name&quot;: &quot;Stacy McGlynn&quot;,
+                    &quot;bio&quot;: &quot;Est est est laboriosam ut quam sapiente ullam iste. Eos consequuntur sit laboriosam dolore quia omnis dolor laborum. Quae eligendi id vel beatae. Necessitatibus porro blanditiis ea maiores atque sint.&quot;,
+                    &quot;birth_date&quot;: &quot;2015-09-27&quot;,
+                    &quot;created_at&quot;: &quot;2024-09-12T07:41:35.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2024-09-12T07:41:35.000000Z&quot;
                 }
             },
             {
-                &quot;id&quot;: 29,
-                &quot;title&quot;: &quot;Ratione et asperiores vel architecto.&quot;,
-                &quot;description&quot;: &quot;Itaque consectetur consequuntur sunt explicabo. Architecto necessitatibus voluptates magni est maiores recusandae. Et et omnis autem omnis omnis soluta. At molestiae sint quaerat aperiam laboriosam voluptas.&quot;,
-                &quot;publish_date&quot;: &quot;1986-06-03&quot;,
-                &quot;author_id&quot;: 18,
-                &quot;created_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
+                &quot;id&quot;: 38,
+                &quot;title&quot;: &quot;Sit dignissimos in quis.&quot;,
+                &quot;description&quot;: &quot;Ea voluptatem nam nihil est id adipisci. Et quo sequi quos neque doloremque. Et nobis tempore necessitatibus explicabo vero cum nam. Doloremque aut exercitationem neque veritatis libero est.&quot;,
+                &quot;publish_date&quot;: &quot;1992-05-14&quot;,
+                &quot;author_id&quot;: 8,
+                &quot;created_at&quot;: &quot;2024-09-12T07:41:35.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-09-12T07:41:35.000000Z&quot;,
                 &quot;author&quot;: {
-                    &quot;id&quot;: 18,
-                    &quot;name&quot;: &quot;Jackeline Baumbach&quot;,
-                    &quot;bio&quot;: &quot;Impedit iste ut excepturi. Ipsam officiis praesentium sint quod architecto perferendis rerum. Quam doloribus cupiditate sint qui minima. Ullam amet nostrum fuga eligendi.&quot;,
-                    &quot;birth_date&quot;: &quot;1987-01-03&quot;,
-                    &quot;created_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;
+                    &quot;id&quot;: 8,
+                    &quot;name&quot;: &quot;Prof. Douglas Wilkinson DDS&quot;,
+                    &quot;bio&quot;: &quot;Ratione natus similique eos inventore tempore consequatur sit. Qui expedita quo molestiae eveniet eos quae suscipit id. Voluptatem laudantium qui aut ex vero. Velit tempore mollitia delectus.&quot;,
+                    &quot;birth_date&quot;: &quot;2010-11-18&quot;,
+                    &quot;created_at&quot;: &quot;2024-09-12T07:41:35.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2024-09-12T07:41:35.000000Z&quot;
                 }
             }
         ],
@@ -1280,10 +1276,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="search"                data-endpoint="GETapi-v1-books"
-               value="asperiores"
+               value="dignissimos"
                data-component="query">
     <br>
-<p>Comma-separated list of fields to include in the response. Example: <code>asperiores</code></p>
+<p>Comma-separated list of fields to include in the response. Example: <code>dignissimos</code></p>
             </div>
                 </form>
 
@@ -1339,11 +1335,11 @@ access-control-allow-origin: *
     &quot;success&quot;: true,
     &quot;data&quot;: {
         &quot;id&quot;: 1,
-        &quot;title&quot;: &quot;Vitae dolore quidem aliquid.&quot;,
-        &quot;description&quot;: &quot;Fugiat unde illum eaque distinctio expedita excepturi cumque iste. Aut voluptatem sed rem ea ullam debitis dicta. Libero eaque dolorem magnam iste quis et. Ipsam illo et officia et ducimus.&quot;,
-        &quot;publish_date&quot;: &quot;2021-02-23&quot;,
+        &quot;title&quot;: &quot;Laboriosam qui aut.&quot;,
+        &quot;description&quot;: &quot;Ad est enim sed et animi quidem. Esse exercitationem fugit veritatis doloribus. Possimus quaerat veniam voluptas eos amet qui suscipit. Explicabo delectus harum neque amet voluptatibus eius.&quot;,
+        &quot;publish_date&quot;: &quot;2023-03-30&quot;,
         &quot;author&quot;: {
-            &quot;name&quot;: &quot;Bridgette Stiedemann&quot;
+            &quot;name&quot;: &quot;Mr. Alec Hegmann Jr.&quot;
         }
     },
     &quot;message&quot;: &quot;Book retrieved&quot;
@@ -1450,10 +1446,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"ysycfwvff\",
-    \"description\": \"Nihil et hic non aliquid quisquam quo.\",
-    \"publish_date\": \"2024-09-12T06:52:25\",
-    \"author_id\": \"labore\"
+    \"title\": \"vukb\",
+    \"description\": \"Aut et qui quia vel mollitia voluptas.\",
+    \"publish_date\": \"2024-09-12T07:58:45\",
+    \"author_id\": \"beatae\"
 }"
 </code></pre></div>
 
@@ -1469,10 +1465,10 @@ const headers = {
 };
 
 let body = {
-    "title": "ysycfwvff",
-    "description": "Nihil et hic non aliquid quisquam quo.",
-    "publish_date": "2024-09-12T06:52:25",
-    "author_id": "labore"
+    "title": "vukb",
+    "description": "Aut et qui quia vel mollitia voluptas.",
+    "publish_date": "2024-09-12T07:58:45",
+    "author_id": "beatae"
 };
 
 fetch(url, {
@@ -1561,10 +1557,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-v1-books"
-               value="ysycfwvff"
+               value="vukb"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ysycfwvff</code></p>
+<p>Must not be greater than 255 characters. Example: <code>vukb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1572,10 +1568,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-books"
-               value="Nihil et hic non aliquid quisquam quo."
+               value="Aut et qui quia vel mollitia voluptas."
                data-component="body">
     <br>
-<p>Example: <code>Nihil et hic non aliquid quisquam quo.</code></p>
+<p>Example: <code>Aut et qui quia vel mollitia voluptas.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>publish_date</code></b>&nbsp;&nbsp;
@@ -1583,10 +1579,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="publish_date"                data-endpoint="POSTapi-v1-books"
-               value="2024-09-12T06:52:25"
+               value="2024-09-12T07:58:45"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-12T06:52:25</code></p>
+<p>Must be a valid date. Example: <code>2024-09-12T07:58:45</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>author_id</code></b>&nbsp;&nbsp;
@@ -1594,10 +1590,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author_id"                data-endpoint="POSTapi-v1-books"
-               value="labore"
+               value="beatae"
                data-component="body">
     <br>
-<p>Example: <code>labore</code></p>
+<p>Example: <code>beatae</code></p>
         </div>
         </form>
 
@@ -1618,9 +1614,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"hgqbxixhe\",
-    \"description\": \"Vel iusto veniam autem mollitia.\",
-    \"publish_date\": \"2024-09-12T06:52:25\"
+    \"title\": \"ynfb\",
+    \"description\": \"Sint accusantium voluptatem est minus hic doloremque doloribus.\",
+    \"publish_date\": \"2024-09-12T07:58:45\"
 }"
 </code></pre></div>
 
@@ -1636,9 +1632,9 @@ const headers = {
 };
 
 let body = {
-    "title": "hgqbxixhe",
-    "description": "Vel iusto veniam autem mollitia.",
-    "publish_date": "2024-09-12T06:52:25"
+    "title": "ynfb",
+    "description": "Sint accusantium voluptatem est minus hic doloremque doloribus.",
+    "publish_date": "2024-09-12T07:58:45"
 };
 
 fetch(url, {
@@ -1739,10 +1735,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-v1-books--id-"
-               value="hgqbxixhe"
+               value="ynfb"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>hgqbxixhe</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ynfb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1750,10 +1746,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-books--id-"
-               value="Vel iusto veniam autem mollitia."
+               value="Sint accusantium voluptatem est minus hic doloremque doloribus."
                data-component="body">
     <br>
-<p>Example: <code>Vel iusto veniam autem mollitia.</code></p>
+<p>Example: <code>Sint accusantium voluptatem est minus hic doloremque doloribus.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>publish_date</code></b>&nbsp;&nbsp;
@@ -1761,10 +1757,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="publish_date"                data-endpoint="PUTapi-v1-books--id-"
-               value="2024-09-12T06:52:25"
+               value="2024-09-12T07:58:45"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-12T06:52:25</code></p>
+<p>Must be a valid date. Example: <code>2024-09-12T07:58:45</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>author_id</code></b>&nbsp;&nbsp;

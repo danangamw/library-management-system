@@ -24,20 +24,20 @@ endpoints:
         name: search
         description: 'Comma-separated list of fields to include in the response.'
         required: true
-        example: asperiores
+        example: dignissimos
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      search: asperiores
+      search: dignissimos
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"success":true,"data":{"current_page":1,"data":[{"id":26,"title":"Dicta ea asperiores.","description":"Fugiat incidunt et corporis consequatur et laborum. Nobis sit laboriosam modi harum et id. Ut nihil quaerat voluptate autem maxime. Ab debitis est quam.","publish_date":"1973-02-17","author_id":17,"created_at":"2024-09-12T04:25:35.000000Z","updated_at":"2024-09-12T04:25:35.000000Z","author":{"id":17,"name":"Dr. Jared Swift MD","bio":"Voluptatem rerum ipsum hic a maiores maxime vitae. Reprehenderit dolorem dolor aut quo ut ipsum non. Rerum vel maiores ut est. Saepe soluta voluptatem eveniet voluptatum voluptatem eum.","birth_date":"2023-12-12","created_at":"2024-09-12T04:25:35.000000Z","updated_at":"2024-09-12T04:25:35.000000Z"}},{"id":29,"title":"Ratione et asperiores vel architecto.","description":"Itaque consectetur consequuntur sunt explicabo. Architecto necessitatibus voluptates magni est maiores recusandae. Et et omnis autem omnis omnis soluta. At molestiae sint quaerat aperiam laboriosam voluptas.","publish_date":"1986-06-03","author_id":18,"created_at":"2024-09-12T04:25:35.000000Z","updated_at":"2024-09-12T04:25:35.000000Z","author":{"id":18,"name":"Jackeline Baumbach","bio":"Impedit iste ut excepturi. Ipsam officiis praesentium sint quod architecto perferendis rerum. Quam doloribus cupiditate sint qui minima. Ullam amet nostrum fuga eligendi.","birth_date":"1987-01-03","created_at":"2024-09-12T04:25:35.000000Z","updated_at":"2024-09-12T04:25:35.000000Z"}}],"first_page_url":"http:\/\/localhost:8000\/api\/v1\/books?page=1","from":1,"last_page":1,"last_page_url":"http:\/\/localhost:8000\/api\/v1\/books?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/books?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/localhost:8000\/api\/v1\/books","per_page":10,"prev_page_url":null,"to":2,"total":2},"message":"List of all books"}'
+        content: '{"success":true,"data":{"current_page":1,"data":[{"id":25,"title":"Veritatis reprehenderit dignissimos culpa.","description":"Enim eius est amet. Beatae error porro vero eum. Vero est aut voluptates. Hic ut illum sit.","publish_date":"1991-12-04","author_id":5,"created_at":"2024-09-12T07:41:35.000000Z","updated_at":"2024-09-12T07:41:35.000000Z","author":{"id":5,"name":"Stacy McGlynn","bio":"Est est est laboriosam ut quam sapiente ullam iste. Eos consequuntur sit laboriosam dolore quia omnis dolor laborum. Quae eligendi id vel beatae. Necessitatibus porro blanditiis ea maiores atque sint.","birth_date":"2015-09-27","created_at":"2024-09-12T07:41:35.000000Z","updated_at":"2024-09-12T07:41:35.000000Z"}},{"id":38,"title":"Sit dignissimos in quis.","description":"Ea voluptatem nam nihil est id adipisci. Et quo sequi quos neque doloremque. Et nobis tempore necessitatibus explicabo vero cum nam. Doloremque aut exercitationem neque veritatis libero est.","publish_date":"1992-05-14","author_id":8,"created_at":"2024-09-12T07:41:35.000000Z","updated_at":"2024-09-12T07:41:35.000000Z","author":{"id":8,"name":"Prof. Douglas Wilkinson DDS","bio":"Ratione natus similique eos inventore tempore consequatur sit. Qui expedita quo molestiae eveniet eos quae suscipit id. Voluptatem laudantium qui aut ex vero. Velit tempore mollitia delectus.","birth_date":"2010-11-18","created_at":"2024-09-12T07:41:35.000000Z","updated_at":"2024-09-12T07:41:35.000000Z"}}],"first_page_url":"http:\/\/localhost:8000\/api\/v1\/books?page=1","from":1,"last_page":1,"last_page_url":"http:\/\/localhost:8000\/api\/v1\/books?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/books?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/localhost:8000\/api\/v1\/books","per_page":10,"prev_page_url":null,"to":2,"total":2},"message":"List of all books"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -86,7 +86,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":{"id":1,"title":"Vitae dolore quidem aliquid.","description":"Fugiat unde illum eaque distinctio expedita excepturi cumque iste. Aut voluptatem sed rem ea ullam debitis dicta. Libero eaque dolorem magnam iste quis et. Ipsam illo et officia et ducimus.","publish_date":"2021-02-23","author":{"name":"Bridgette Stiedemann"}},"message":"Book retrieved"}'
+        content: '{"success":true,"data":{"id":1,"title":"Laboriosam qui aut.","description":"Ad est enim sed et animi quidem. Esse exercitationem fugit veritatis doloribus. Possimus quaerat veniam voluptas eos amet qui suscipit. Explicabo delectus harum neque amet voluptatibus eius.","publish_date":"2023-03-30","author":{"name":"Mr. Alec Hegmann Jr."}},"message":"Book retrieved"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -124,7 +124,7 @@ endpoints:
         name: title
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ysycfwvff
+        example: vukb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -133,7 +133,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Nihil et hic non aliquid quisquam quo.'
+        example: 'Aut et qui quia vel mollitia voluptas.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +142,7 @@ endpoints:
         name: publish_date
         description: 'Must be a valid date.'
         required: false
-        example: '2024-09-12T06:52:25'
+        example: '2024-09-12T07:58:45'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -151,16 +151,16 @@ endpoints:
         name: author_id
         description: ''
         required: true
-        example: labore
+        example: beatae
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: ysycfwvff
-      description: 'Nihil et hic non aliquid quisquam quo.'
-      publish_date: '2024-09-12T06:52:25'
-      author_id: labore
+      title: vukb
+      description: 'Aut et qui quia vel mollitia voluptas.'
+      publish_date: '2024-09-12T07:58:45'
+      author_id: beatae
     fileParameters: []
     responses: []
     responseFields: []
@@ -204,7 +204,7 @@ endpoints:
         name: title
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: hgqbxixhe
+        example: ynfb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,7 +213,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Vel iusto veniam autem mollitia.'
+        example: 'Sint accusantium voluptatem est minus hic doloremque doloribus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -222,7 +222,7 @@ endpoints:
         name: publish_date
         description: 'Must be a valid date.'
         required: false
-        example: '2024-09-12T06:52:25'
+        example: '2024-09-12T07:58:45'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -237,9 +237,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: hgqbxixhe
-      description: 'Vel iusto veniam autem mollitia.'
-      publish_date: '2024-09-12T06:52:25'
+      title: ynfb
+      description: 'Sint accusantium voluptatem est minus hic doloremque doloribus.'
+      publish_date: '2024-09-12T07:58:45'
     fileParameters: []
     responses: []
     responseFields: []
