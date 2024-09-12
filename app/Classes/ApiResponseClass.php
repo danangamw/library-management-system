@@ -23,6 +23,16 @@ class ApiResponseClass
     public static function throw($e, $message = "Something went wrong! Process not completed")
     {
         Log::info($e);
+        $response = [
+            'success' => false,
+            'data' => null
+        ];
+
+        if (!empty($message)) {
+            $response['message'] = $message;
+        }
+
+        return response()->json($response, 500);
         throw new HttpResponseException(response()->json(["message" => $message]));
     }
 

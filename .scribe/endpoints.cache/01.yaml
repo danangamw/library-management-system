@@ -39,7 +39,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":[{"id":1,"title":"Aut fugit.","description":"Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.","publish_date":"2001-08-16","author":{"name":"ttesting update"}},{"id":2,"title":"Provident expedita nostrum odit.","description":"Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.","publish_date":"1983-02-04","author":{"name":"ttesting update"}},{"id":3,"title":"Nostrum consequatur autem omnis ducimus.","description":"Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.","publish_date":"1972-02-27","author":{"name":"ttesting update"}},{"id":4,"title":"Eos ipsum officiis alias.","description":"Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.","publish_date":"2012-01-02","author":{"name":"ttesting update"}},{"id":5,"title":"At vero accusamus eligendi.","description":"Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.","publish_date":"2001-08-31","author":{"name":"ttesting update"}}],"message":"Books with author id 1"}'
+        content: '{"success":true,"data":"Book with author id 1 not found","message":404}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

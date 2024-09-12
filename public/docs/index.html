@@ -129,7 +129,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 11, 2024</li>
+        <li>Last updated: September 12, 2024</li>
     </ul>
 </div>
 
@@ -201,54 +201,8 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;title&quot;: &quot;Aut fugit.&quot;,
-            &quot;description&quot;: &quot;Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.&quot;,
-            &quot;publish_date&quot;: &quot;2001-08-16&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;title&quot;: &quot;Provident expedita nostrum odit.&quot;,
-            &quot;description&quot;: &quot;Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.&quot;,
-            &quot;publish_date&quot;: &quot;1983-02-04&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;title&quot;: &quot;Nostrum consequatur autem omnis ducimus.&quot;,
-            &quot;description&quot;: &quot;Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.&quot;,
-            &quot;publish_date&quot;: &quot;1972-02-27&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;title&quot;: &quot;Eos ipsum officiis alias.&quot;,
-            &quot;description&quot;: &quot;Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.&quot;,
-            &quot;publish_date&quot;: &quot;2012-01-02&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;title&quot;: &quot;At vero accusamus eligendi.&quot;,
-            &quot;description&quot;: &quot;Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.&quot;,
-            &quot;publish_date&quot;: &quot;2001-08-31&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
-            }
-        }
-    ],
-    &quot;message&quot;: &quot;Books with author id 1&quot;
+    &quot;data&quot;: &quot;Book with author id 1 not found&quot;,
+    &quot;message&quot;: 404
 }</code>
  </pre>
     </span>
@@ -352,7 +306,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/authors" \
+    --get "http://localhost:8000/api/v1/authors?search=ab" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -361,6 +315,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/authors"
 );
+
+const params = {
+    "search": "ab",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Content-Type": "application/json",
@@ -389,62 +349,46 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;ttesting update&quot;,
-            &quot;bio&quot;: &quot;no bio needed&quot;,
-            &quot;birth_date&quot;: &quot;2024-09-11&quot;
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Jakob Lynch&quot;,
-            &quot;bio&quot;: &quot;Alias aut qui culpa natus assumenda. Sit et omnis non eveniet et. Veritatis voluptate quos reprehenderit nisi cumque cum.&quot;,
-            &quot;birth_date&quot;: &quot;1990-05-19&quot;
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Dr. Guillermo Kirlin&quot;,
-            &quot;bio&quot;: &quot;Corrupti aut illum laudantium et sit. Quod consequatur necessitatibus error aut. Ad quas blanditiis cumque laborum consequatur repellendus.&quot;,
-            &quot;birth_date&quot;: &quot;1993-01-12&quot;
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Mr. Adalberto Maggio DDS&quot;,
-            &quot;bio&quot;: &quot;Et odit ullam beatae eveniet rerum quo. Et nisi ipsam omnis architecto voluptas. Eaque sint aut delectus quibusdam ea. Cumque quo fuga mollitia deserunt.&quot;,
-            &quot;birth_date&quot;: &quot;1973-10-09&quot;
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Koby Emard&quot;,
-            &quot;bio&quot;: &quot;Cum aliquid sequi cumque consequatur repellat est. Quae dolorem laudantium rerum voluptatibus amet. Corporis veritatis esse delectus perspiciatis non dolores rem.&quot;,
-            &quot;birth_date&quot;: &quot;2010-01-14&quot;
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Helmer Gislason&quot;,
-            &quot;bio&quot;: &quot;Cum reiciendis sint debitis earum. Porro voluptatem sed dolorem qui sit animi. Pariatur porro itaque a suscipit optio. Explicabo ratione ullam et unde ex omnis. Impedit ducimus soluta incidunt.&quot;,
-            &quot;birth_date&quot;: &quot;2020-10-11&quot;
-        },
-        {
-            &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;Mr. Alexis Fay V&quot;,
-            &quot;bio&quot;: &quot;Iusto tempore quas repellendus. Odio dolores at ipsam optio adipisci asperiores. Quas quibusdam consectetur ut soluta corporis maiores. Omnis sunt iusto aut impedit ipsa.&quot;,
-            &quot;birth_date&quot;: &quot;1990-12-11&quot;
-        },
-        {
-            &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;Jorge Ondricka&quot;,
-            &quot;bio&quot;: &quot;Eveniet ut temporibus ea quis voluptas ut aliquam. Est iusto molestias ut sed vero ratione et. Omnis iste qui porro error optio. Sunt voluptatem rerum voluptatem aut numquam blanditiis facere.&quot;,
-            &quot;birth_date&quot;: &quot;2022-07-18&quot;
-        },
-        {
-            &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;Prof. Kayley Borer&quot;,
-            &quot;bio&quot;: &quot;Corrupti animi nesciunt omnis aperiam. Aut voluptatem deserunt ut corporis recusandae id.&quot;,
-            &quot;birth_date&quot;: &quot;1976-10-01&quot;
-        }
-    ],
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 7,
+                &quot;name&quot;: &quot;Keith Abshire&quot;,
+                &quot;bio&quot;: &quot;Dolor eum voluptatibus cum voluptas quos id. Veritatis quaerat blanditiis aut dolorum. Voluptatibus dolores illum veniam. Molestias pariatur sed omnis animi iure.&quot;,
+                &quot;birth_date&quot;: &quot;2017-05-26&quot;,
+                &quot;created_at&quot;: &quot;2024-09-12T03:45:03.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-09-12T03:45:03.000000Z&quot;
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;http://localhost:8000/api/v1/authors?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;last_page_url&quot;: &quot;http://localhost:8000/api/v1/authors?page=1&quot;,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost:8000/api/v1/authors?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;http://localhost:8000/api/v1/authors&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 1,
+        &quot;total&quot;: 1
+    },
     &quot;message&quot;: &quot;List of all authors&quot;
 }</code>
  </pre>
@@ -518,7 +462,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-v1-authors"
+               value="ab"
+               data-component="query">
+    <br>
+<p>Comma-separated list of fields to include in the response. Example: <code>ab</code></p>
+            </div>
+                </form>
 
                     <h2 id="authors-GETapi-v1-authors--id-">Display the specified author.</h2>
 
@@ -535,13 +491,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/v1/authors/1" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"J.K. Rowling\",
-    \"bio\": \"British author, best known for the Harry Potter series.\",
-    \"birth_date\": \"1965-07-31\"
-}"
-</code></pre></div>
+    --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
@@ -554,23 +504,16 @@ const headers = {
     "Accept": "application/json",
 };
 
-let body = {
-    "name": "J.K. Rowling",
-    "bio": "British author, best known for the Harry Potter series.",
-    "birth_date": "1965-07-31"
-};
-
 fetch(url, {
     method: "GET",
     headers,
-    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
 <span id="example-responses-GETapi-v1-authors--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -583,13 +526,8 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;ttesting update&quot;,
-        &quot;bio&quot;: &quot;no bio needed&quot;,
-        &quot;birth_date&quot;: &quot;2024-09-11&quot;
-    },
-    &quot;message&quot;: &quot;Author retrieved&quot;
+    &quot;data&quot;: null,
+    &quot;message&quot;: &quot;Author not found&quot;
 }</code>
  </pre>
     </span>
@@ -674,41 +612,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>The ID of the author. Example: <code>1</code></p>
             </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="name"                data-endpoint="GETapi-v1-authors--id-"
-               value="J.K. Rowling"
-               data-component="body">
-    <br>
-<p>The new name of the author. Example: <code>J.K. Rowling</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="bio"                data-endpoint="GETapi-v1-authors--id-"
-               value="British author, best known for the Harry Potter series."
-               data-component="body">
-    <br>
-<p>The new biography of the author. Example: <code>British author, best known for the Harry Potter series.</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
-<small>date</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="birth_date"                data-endpoint="GETapi-v1-authors--id-"
-               value="1965-07-31"
-               data-component="body">
-    <br>
-<p>The new birth date of the author. Example: <code>1965-07-31</code></p>
-        </div>
-        </form>
+                    </form>
 
                     <h2 id="authors-POSTapi-v1-authors">Store a newly created author in storage.</h2>
 
@@ -727,9 +631,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"J.K. Rowling\",
-    \"bio\": \"British author, best known for the Harry Potter series.\",
-    \"birth_date\": \"1965-07-31\"
+    \"name\": \"j\",
+    \"bio\": \"vero\",
+    \"birth_date\": \"2024-09-12T06:52:25\"
 }"
 </code></pre></div>
 
@@ -745,9 +649,9 @@ const headers = {
 };
 
 let body = {
-    "name": "J.K. Rowling",
-    "bio": "British author, best known for the Harry Potter series.",
-    "birth_date": "1965-07-31"
+    "name": "j",
+    "bio": "vero",
+    "birth_date": "2024-09-12T06:52:25"
 };
 
 fetch(url, {
@@ -836,10 +740,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-authors"
-               value="J.K. Rowling"
+               value="j"
                data-component="body">
     <br>
-<p>The name of the author. Example: <code>J.K. Rowling</code></p>
+<p>Must not be greater than 255 characters. Example: <code>j</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
@@ -847,21 +751,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="bio"                data-endpoint="POSTapi-v1-authors"
-               value="British author, best known for the Harry Potter series."
+               value="vero"
                data-component="body">
     <br>
-<p>optional The biography of the author. Example: <code>British author, best known for the Harry Potter series.</code></p>
+<p>Example: <code>vero</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
-<small>date</small>&nbsp;
+<small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="POSTapi-v1-authors"
-               value="1965-07-31"
+               value="2024-09-12T06:52:25"
                data-component="body">
     <br>
-<p>optional The birth date of the author. Example: <code>1965-07-31</code></p>
+<p>Must be a valid date. Example: <code>2024-09-12T06:52:25</code></p>
         </div>
         </form>
 
@@ -882,9 +786,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"zps\",
-    \"bio\": \"rem\",
-    \"birth_date\": \"2024-09-11T08:32:48\"
+    \"name\": \"uxewtibeyexjmolgzv\",
+    \"bio\": \"aut\",
+    \"birth_date\": \"2024-09-12T06:52:25\"
 }"
 </code></pre></div>
 
@@ -900,9 +804,9 @@ const headers = {
 };
 
 let body = {
-    "name": "zps",
-    "bio": "rem",
-    "birth_date": "2024-09-11T08:32:48"
+    "name": "uxewtibeyexjmolgzv",
+    "bio": "aut",
+    "birth_date": "2024-09-12T06:52:25"
 };
 
 fetch(url, {
@@ -920,7 +824,7 @@ fetch(url, {
                 <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Author successfully deleted&quot;
+    &quot;message&quot;: &quot;Author successfully updated&quot;
 }</code>
  </pre>
     </span>
@@ -1012,10 +916,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-authors--id-"
-               value="zps"
+               value="uxewtibeyexjmolgzv"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>zps</code></p>
+<p>Must not be greater than 255 characters. Example: <code>uxewtibeyexjmolgzv</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
@@ -1023,10 +927,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="bio"                data-endpoint="PUTapi-v1-authors--id-"
-               value="rem"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>rem</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>birth_date</code></b>&nbsp;&nbsp;
@@ -1034,10 +938,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="birth_date"                data-endpoint="PUTapi-v1-authors--id-"
-               value="2024-09-11T08:32:48"
+               value="2024-09-12T06:52:25"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-11T08:32:48</code></p>
+<p>Must be a valid date. Example: <code>2024-09-12T06:52:25</code></p>
         </div>
         </form>
 
@@ -1187,7 +1091,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/books" \
+    --get "http://localhost:8000/api/v1/books?search=asperiores" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1196,6 +1100,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/books"
 );
+
+const params = {
+    "search": "asperiores",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Content-Type": "application/json",
@@ -1224,413 +1134,72 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;title&quot;: &quot;Aut fugit.&quot;,
-            &quot;description&quot;: &quot;Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.&quot;,
-            &quot;publish_date&quot;: &quot;2001-08-16&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 26,
+                &quot;title&quot;: &quot;Dicta ea asperiores.&quot;,
+                &quot;description&quot;: &quot;Fugiat incidunt et corporis consequatur et laborum. Nobis sit laboriosam modi harum et id. Ut nihil quaerat voluptate autem maxime. Ab debitis est quam.&quot;,
+                &quot;publish_date&quot;: &quot;1973-02-17&quot;,
+                &quot;author_id&quot;: 17,
+                &quot;created_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
+                &quot;author&quot;: {
+                    &quot;id&quot;: 17,
+                    &quot;name&quot;: &quot;Dr. Jared Swift MD&quot;,
+                    &quot;bio&quot;: &quot;Voluptatem rerum ipsum hic a maiores maxime vitae. Reprehenderit dolorem dolor aut quo ut ipsum non. Rerum vel maiores ut est. Saepe soluta voluptatem eveniet voluptatum voluptatem eum.&quot;,
+                    &quot;birth_date&quot;: &quot;2023-12-12&quot;,
+                    &quot;created_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 29,
+                &quot;title&quot;: &quot;Ratione et asperiores vel architecto.&quot;,
+                &quot;description&quot;: &quot;Itaque consectetur consequuntur sunt explicabo. Architecto necessitatibus voluptates magni est maiores recusandae. Et et omnis autem omnis omnis soluta. At molestiae sint quaerat aperiam laboriosam voluptas.&quot;,
+                &quot;publish_date&quot;: &quot;1986-06-03&quot;,
+                &quot;author_id&quot;: 18,
+                &quot;created_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
+                &quot;author&quot;: {
+                    &quot;id&quot;: 18,
+                    &quot;name&quot;: &quot;Jackeline Baumbach&quot;,
+                    &quot;bio&quot;: &quot;Impedit iste ut excepturi. Ipsam officiis praesentium sint quod architecto perferendis rerum. Quam doloribus cupiditate sint qui minima. Ullam amet nostrum fuga eligendi.&quot;,
+                    &quot;birth_date&quot;: &quot;1987-01-03&quot;,
+                    &quot;created_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2024-09-12T04:25:35.000000Z&quot;
+                }
             }
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;title&quot;: &quot;Provident expedita nostrum odit.&quot;,
-            &quot;description&quot;: &quot;Corrupti illo expedita et ab possimus. Nemo corporis ipsum ex modi necessitatibus. Rerum magni eos qui voluptatibus architecto alias. Atque natus sit adipisci minima.&quot;,
-            &quot;publish_date&quot;: &quot;1983-02-04&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
+        ],
+        &quot;first_page_url&quot;: &quot;http://localhost:8000/api/v1/books?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;last_page_url&quot;: &quot;http://localhost:8000/api/v1/books?page=1&quot;,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost:8000/api/v1/books?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
             }
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;title&quot;: &quot;Nostrum consequatur autem omnis ducimus.&quot;,
-            &quot;description&quot;: &quot;Dolorem maiores soluta ea consectetur ipsum. Iste tempore tenetur est. Harum dolores labore corrupti nostrum veniam itaque.&quot;,
-            &quot;publish_date&quot;: &quot;1972-02-27&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;title&quot;: &quot;Eos ipsum officiis alias.&quot;,
-            &quot;description&quot;: &quot;Earum quisquam nemo culpa voluptatem et autem. Praesentium accusantium quis accusantium harum facilis. Neque expedita qui et praesentium. Doloremque earum omnis accusantium alias quia eveniet nihil commodi.&quot;,
-            &quot;publish_date&quot;: &quot;2012-01-02&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;title&quot;: &quot;At vero accusamus eligendi.&quot;,
-            &quot;description&quot;: &quot;Eum mollitia et tenetur est impedit dolor est. Cum labore dolor quia a. Dolorem et eligendi quia qui cumque. Sint ipsa illum qui. Ex autem accusamus et natus saepe qui adipisci.&quot;,
-            &quot;publish_date&quot;: &quot;2001-08-31&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;ttesting update&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;title&quot;: &quot;Ipsam ducimus eaque autem.&quot;,
-            &quot;description&quot;: &quot;Illo voluptatem non non libero facere. Magni doloremque exercitationem minus nemo. Enim aut itaque dolor quidem eaque dolorem laboriosam. Et nam at debitis commodi iste. Dolorem dolore quos necessitatibus autem.&quot;,
-            &quot;publish_date&quot;: &quot;2012-11-26&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jakob Lynch&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 7,
-            &quot;title&quot;: &quot;Delectus voluptates corporis et.&quot;,
-            &quot;description&quot;: &quot;Totam quis maxime alias. Ut dolor illum quibusdam. Eaque at minima magnam est odit dolor.&quot;,
-            &quot;publish_date&quot;: &quot;2023-10-15&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jakob Lynch&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 8,
-            &quot;title&quot;: &quot;Suscipit veritatis.&quot;,
-            &quot;description&quot;: &quot;Architecto rem nam sint saepe est qui. Non fuga odio odit quaerat voluptas sed optio sed. Enim consequatur doloremque consequatur recusandae beatae tenetur. Hic nobis et aliquam asperiores accusantium et aperiam et.&quot;,
-            &quot;publish_date&quot;: &quot;1984-03-19&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jakob Lynch&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 9,
-            &quot;title&quot;: &quot;Aperiam facere illum atque.&quot;,
-            &quot;description&quot;: &quot;Est aut rerum sed ratione. Dolores tempora dignissimos dolor vel. Sunt facilis tempore voluptate esse ea eveniet. Ut voluptatibus dolor nulla.&quot;,
-            &quot;publish_date&quot;: &quot;2010-11-08&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jakob Lynch&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 10,
-            &quot;title&quot;: &quot;Possimus quo rem ut.&quot;,
-            &quot;description&quot;: &quot;Architecto molestiae qui necessitatibus quia laborum non. Aliquid minus distinctio omnis vel. Officiis nesciunt at aliquam. Quasi et sunt sit repellendus. Magnam fugiat esse exercitationem nihil et eum.&quot;,
-            &quot;publish_date&quot;: &quot;1976-04-11&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jakob Lynch&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 11,
-            &quot;title&quot;: &quot;Sit possimus quos.&quot;,
-            &quot;description&quot;: &quot;Est tempore laboriosam ut aperiam. Iusto dicta pariatur rerum dolores qui.&quot;,
-            &quot;publish_date&quot;: &quot;2008-09-08&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Dr. Guillermo Kirlin&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 12,
-            &quot;title&quot;: &quot;In qui saepe dolores.&quot;,
-            &quot;description&quot;: &quot;Ipsa soluta et non ut ut delectus. Aperiam consequatur accusantium est impedit. Magni quibusdam enim aut non. Dolorem eveniet est explicabo.&quot;,
-            &quot;publish_date&quot;: &quot;1991-08-20&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Dr. Guillermo Kirlin&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 13,
-            &quot;title&quot;: &quot;Perspiciatis quasi ut.&quot;,
-            &quot;description&quot;: &quot;Voluptas qui et nulla possimus. Accusamus porro reiciendis est dolore nostrum aut quidem. Atque sapiente eum tempore sapiente aliquam natus autem.&quot;,
-            &quot;publish_date&quot;: &quot;1993-03-27&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Dr. Guillermo Kirlin&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 14,
-            &quot;title&quot;: &quot;Modi voluptatem eligendi eaque.&quot;,
-            &quot;description&quot;: &quot;Vel nesciunt omnis eius dolor laborum aut. Quis odit officiis corporis vel est odio. Cupiditate et autem eligendi eius enim maxime.&quot;,
-            &quot;publish_date&quot;: &quot;1979-08-29&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Dr. Guillermo Kirlin&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 15,
-            &quot;title&quot;: &quot;Aut temporibus dolor.&quot;,
-            &quot;description&quot;: &quot;Odio eaque et et eligendi. Et sed sed et praesentium numquam magni voluptas. Recusandae quas qui eius exercitationem ea officia amet. Voluptatem qui voluptatem occaecati iusto.&quot;,
-            &quot;publish_date&quot;: &quot;1973-08-12&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Dr. Guillermo Kirlin&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 16,
-            &quot;title&quot;: &quot;Aliquid vel repellat.&quot;,
-            &quot;description&quot;: &quot;Dolore voluptatem voluptatibus earum illum magni tempora quaerat. Aliquam maxime nulla et molestiae eveniet. Ratione voluptates pariatur error eos.&quot;,
-            &quot;publish_date&quot;: &quot;1974-06-24&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Adalberto Maggio DDS&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 17,
-            &quot;title&quot;: &quot;Odio voluptatem explicabo delectus.&quot;,
-            &quot;description&quot;: &quot;Repudiandae reprehenderit harum quis ut ullam perspiciatis cupiditate. Assumenda ea sed optio. Qui et aut ut debitis nihil. Omnis odio dolorem quis excepturi.&quot;,
-            &quot;publish_date&quot;: &quot;1977-04-28&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Adalberto Maggio DDS&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 18,
-            &quot;title&quot;: &quot;Officia sint assumenda quia.&quot;,
-            &quot;description&quot;: &quot;Qui quia maxime beatae quaerat molestias non deleniti. Autem eos at rerum porro. Et perspiciatis sed eaque eum odio.&quot;,
-            &quot;publish_date&quot;: &quot;1990-09-28&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Adalberto Maggio DDS&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 19,
-            &quot;title&quot;: &quot;Laboriosam numquam quia qui voluptatem.&quot;,
-            &quot;description&quot;: &quot;Et eos aliquam ab dignissimos. Possimus unde necessitatibus fugiat atque et alias eaque. Quas neque numquam eveniet autem doloremque et ex. Quibusdam molestiae qui et officiis sed recusandae quae.&quot;,
-            &quot;publish_date&quot;: &quot;1984-06-30&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Adalberto Maggio DDS&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 20,
-            &quot;title&quot;: &quot;Facere porro dignissimos sint.&quot;,
-            &quot;description&quot;: &quot;Qui magnam suscipit illum. Molestiae velit nisi molestiae corporis inventore quo. Qui officiis rerum deserunt aut voluptatibus est. Sapiente consectetur explicabo sequi autem.&quot;,
-            &quot;publish_date&quot;: &quot;2015-05-07&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Adalberto Maggio DDS&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 21,
-            &quot;title&quot;: &quot;Quisquam id.&quot;,
-            &quot;description&quot;: &quot;Non consectetur aut quos vero animi nihil ea. Et adipisci nisi voluptatem quaerat voluptatem. Unde consequatur dolores ducimus ut aperiam ut blanditiis. Sit maiores odit ipsa aut.&quot;,
-            &quot;publish_date&quot;: &quot;2018-04-26&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Koby Emard&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 22,
-            &quot;title&quot;: &quot;Qui soluta officiis.&quot;,
-            &quot;description&quot;: &quot;Odio est dolor placeat ratione sunt aliquid. Perspiciatis voluptatum architecto nobis totam quis doloribus. Voluptatum officia quis id autem odio. Labore qui sed perferendis dignissimos vitae.&quot;,
-            &quot;publish_date&quot;: &quot;1983-05-07&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Koby Emard&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 23,
-            &quot;title&quot;: &quot;Commodi dolor exercitationem.&quot;,
-            &quot;description&quot;: &quot;Beatae animi mollitia consequatur nam aliquam. Quidem aspernatur dolores neque animi amet quam. Et nesciunt officia provident ut non eos quasi. Molestias laborum doloremque aut exercitationem.&quot;,
-            &quot;publish_date&quot;: &quot;2003-03-24&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Koby Emard&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 24,
-            &quot;title&quot;: &quot;Molestiae earum qui enim.&quot;,
-            &quot;description&quot;: &quot;Mollitia totam rem et voluptates qui. Rerum rerum libero ad ut. Veniam sunt voluptas non est vel fuga. Ad tempore ut quo beatae deserunt vel.&quot;,
-            &quot;publish_date&quot;: &quot;1979-07-04&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Koby Emard&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 25,
-            &quot;title&quot;: &quot;Voluptatum voluptatum fugit sunt.&quot;,
-            &quot;description&quot;: &quot;Ad voluptate deleniti deserunt eius voluptatem soluta blanditiis illum. Est dolores aut corrupti quam. Et sequi nostrum exercitationem aperiam esse vitae.&quot;,
-            &quot;publish_date&quot;: &quot;1989-01-19&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Koby Emard&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 26,
-            &quot;title&quot;: &quot;Assumenda ullam deserunt et autem.&quot;,
-            &quot;description&quot;: &quot;Omnis quisquam explicabo labore. Necessitatibus voluptas commodi quo molestiae beatae ex. Consectetur nihil non quod reiciendis sint sequi. Animi et dolores et enim exercitationem est repellat necessitatibus. Repudiandae ea cumque assumenda voluptatem.&quot;,
-            &quot;publish_date&quot;: &quot;2020-12-07&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Helmer Gislason&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 27,
-            &quot;title&quot;: &quot;Sequi suscipit delectus.&quot;,
-            &quot;description&quot;: &quot;Asperiores qui error vel unde adipisci esse. Ut enim non odio et deserunt magni dolor. Optio praesentium minus saepe.&quot;,
-            &quot;publish_date&quot;: &quot;1988-02-08&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Helmer Gislason&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 28,
-            &quot;title&quot;: &quot;Nulla doloremque quis.&quot;,
-            &quot;description&quot;: &quot;Et doloribus doloremque quia. Aut sapiente sed deleniti delectus consectetur sit mollitia aut. Quidem fuga sequi sunt. Ut quo adipisci eveniet adipisci rerum id.&quot;,
-            &quot;publish_date&quot;: &quot;1985-09-14&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Helmer Gislason&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 29,
-            &quot;title&quot;: &quot;Quis quam nam.&quot;,
-            &quot;description&quot;: &quot;Qui est atque voluptate nulla natus ducimus ut. Neque a maxime ut unde magnam. Est sunt et quos aut.&quot;,
-            &quot;publish_date&quot;: &quot;1985-10-21&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Helmer Gislason&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 30,
-            &quot;title&quot;: &quot;Quaerat ea.&quot;,
-            &quot;description&quot;: &quot;Ex iusto sit eaque nihil quo aut quisquam nam. Dolor magnam quis sed est quam reiciendis. Quos aut quam voluptatem est ea in et. Et sint ut dolores inventore et qui aut.&quot;,
-            &quot;publish_date&quot;: &quot;1998-03-26&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Helmer Gislason&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 31,
-            &quot;title&quot;: &quot;Porro cumque sit.&quot;,
-            &quot;description&quot;: &quot;Dolorem aperiam vero placeat ipsa. Veritatis repellendus aut numquam.&quot;,
-            &quot;publish_date&quot;: &quot;1977-05-07&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Alexis Fay V&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 32,
-            &quot;title&quot;: &quot;Dolor sit numquam dolor.&quot;,
-            &quot;description&quot;: &quot;Sit eligendi voluptas ut et explicabo aut voluptatem aut. Velit eveniet nam nulla provident doloribus voluptatem. Fugiat aut facilis assumenda autem sed consequuntur. Iusto cum aut velit dolore qui eos illo.&quot;,
-            &quot;publish_date&quot;: &quot;1973-09-30&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Alexis Fay V&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 33,
-            &quot;title&quot;: &quot;Veniam sunt commodi.&quot;,
-            &quot;description&quot;: &quot;Id odio dolore consequatur officia et qui. Dolore excepturi saepe natus. Saepe sed eum libero ut eos. Non sed et dolorem qui ut pariatur.&quot;,
-            &quot;publish_date&quot;: &quot;1992-09-15&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Alexis Fay V&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 34,
-            &quot;title&quot;: &quot;Expedita voluptates ut.&quot;,
-            &quot;description&quot;: &quot;Ab ipsam porro voluptate provident corrupti. Non minus at omnis explicabo. Ea quam qui pariatur in. Alias laudantium inventore laborum tenetur minus nihil qui. Quas aliquam debitis dicta eveniet.&quot;,
-            &quot;publish_date&quot;: &quot;2016-05-28&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Alexis Fay V&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 35,
-            &quot;title&quot;: &quot;Expedita magni autem.&quot;,
-            &quot;description&quot;: &quot;Dolorem voluptatem reiciendis animi animi a. Provident in ab quia blanditiis non ducimus. Sequi aut natus molestiae quisquam non a necessitatibus. Esse ut inventore non sit.&quot;,
-            &quot;publish_date&quot;: &quot;1986-06-24&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Mr. Alexis Fay V&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 36,
-            &quot;title&quot;: &quot;Sint eos veniam.&quot;,
-            &quot;description&quot;: &quot;Magni aut asperiores laboriosam. Sit ut quam quia inventore qui et ducimus. Et qui voluptate eveniet voluptas aut optio iusto fugit. Ut a id dolor.&quot;,
-            &quot;publish_date&quot;: &quot;1986-02-27&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jorge Ondricka&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 37,
-            &quot;title&quot;: &quot;Aperiam esse ut.&quot;,
-            &quot;description&quot;: &quot;Vitae ipsam ea illum occaecati odio accusantium voluptas. Impedit laborum aut harum qui. Et nesciunt voluptatem et et similique ea harum.&quot;,
-            &quot;publish_date&quot;: &quot;1981-02-13&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jorge Ondricka&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 38,
-            &quot;title&quot;: &quot;Modi commodi consequatur.&quot;,
-            &quot;description&quot;: &quot;Reiciendis consequatur ad omnis et unde aperiam doloremque. Sunt sapiente qui autem id earum explicabo dolorem. Vel aut perspiciatis corrupti distinctio architecto. Quo molestias tempore beatae fugit quaerat.&quot;,
-            &quot;publish_date&quot;: &quot;1999-09-04&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jorge Ondricka&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 39,
-            &quot;title&quot;: &quot;Laboriosam ullam autem.&quot;,
-            &quot;description&quot;: &quot;Voluptate in reiciendis recusandae atque et repellat. In sint dolorem impedit veniam maiores quam ut. Minus consequatur et consequuntur facilis autem accusamus.&quot;,
-            &quot;publish_date&quot;: &quot;1985-08-09&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jorge Ondricka&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 40,
-            &quot;title&quot;: &quot;Culpa dolor quis.&quot;,
-            &quot;description&quot;: &quot;Rerum et quasi quia officia incidunt dignissimos dolor. Autem et nemo veniam fuga. Ut culpa rem pariatur voluptas.&quot;,
-            &quot;publish_date&quot;: &quot;2003-06-24&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Jorge Ondricka&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 41,
-            &quot;title&quot;: &quot;Illum sed nam.&quot;,
-            &quot;description&quot;: &quot;Qui dicta id quasi esse. Ab vel laborum quisquam sint ut non iusto laboriosam. At veritatis consectetur id impedit rerum. Molestiae recusandae est dicta atque nisi ducimus.&quot;,
-            &quot;publish_date&quot;: &quot;1988-08-23&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Prof. Kayley Borer&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 42,
-            &quot;title&quot;: &quot;Itaque cumque veniam earum.&quot;,
-            &quot;description&quot;: &quot;Animi magni dolorem autem. Repudiandae libero cumque iusto earum. Magnam corporis at nostrum aut.&quot;,
-            &quot;publish_date&quot;: &quot;2023-01-26&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Prof. Kayley Borer&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 43,
-            &quot;title&quot;: &quot;Est magnam voluptas.&quot;,
-            &quot;description&quot;: &quot;Quibusdam dolorum corrupti nisi voluptatem. Id in qui consequatur iure ut aliquid similique aliquid.&quot;,
-            &quot;publish_date&quot;: &quot;1981-11-25&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Prof. Kayley Borer&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 44,
-            &quot;title&quot;: &quot;Eos totam qui.&quot;,
-            &quot;description&quot;: &quot;Nesciunt laudantium necessitatibus magni qui consequatur deserunt. Totam eveniet vel culpa explicabo labore repellat. Est est explicabo aspernatur itaque modi.&quot;,
-            &quot;publish_date&quot;: &quot;2018-10-15&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Prof. Kayley Borer&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 45,
-            &quot;title&quot;: &quot;Voluptas ut maxime.&quot;,
-            &quot;description&quot;: &quot;Doloribus ullam sapiente magnam dicta. Ratione libero ut incidunt et aliquam nihil nam. Consequatur quis accusamus debitis enim eligendi nemo nulla. Nam dignissimos consequatur eveniet excepturi sint.&quot;,
-            &quot;publish_date&quot;: &quot;1997-10-23&quot;,
-            &quot;author&quot;: {
-                &quot;name&quot;: &quot;Prof. Kayley Borer&quot;
-            }
-        }
-    ],
+        ],
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;http://localhost:8000/api/v1/books&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 2,
+        &quot;total&quot;: 2
+    },
     &quot;message&quot;: &quot;List of all books&quot;
 }</code>
  </pre>
@@ -1704,7 +1273,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-v1-books"
+               value="asperiores"
+               data-component="query">
+    <br>
+<p>Comma-separated list of fields to include in the response. Example: <code>asperiores</code></p>
+            </div>
+                </form>
 
                     <h2 id="books-GETapi-v1-books--id-">Display the specified book.</h2>
 
@@ -1758,11 +1339,11 @@ access-control-allow-origin: *
     &quot;success&quot;: true,
     &quot;data&quot;: {
         &quot;id&quot;: 1,
-        &quot;title&quot;: &quot;Aut fugit.&quot;,
-        &quot;description&quot;: &quot;Ea iusto repellendus quisquam molestiae omnis. Est a amet rem asperiores harum dolorum.&quot;,
-        &quot;publish_date&quot;: &quot;2001-08-16&quot;,
+        &quot;title&quot;: &quot;Vitae dolore quidem aliquid.&quot;,
+        &quot;description&quot;: &quot;Fugiat unde illum eaque distinctio expedita excepturi cumque iste. Aut voluptatem sed rem ea ullam debitis dicta. Libero eaque dolorem magnam iste quis et. Ipsam illo et officia et ducimus.&quot;,
+        &quot;publish_date&quot;: &quot;2021-02-23&quot;,
         &quot;author&quot;: {
-            &quot;name&quot;: &quot;ttesting update&quot;
+            &quot;name&quot;: &quot;Bridgette Stiedemann&quot;
         }
     },
     &quot;message&quot;: &quot;Book retrieved&quot;
@@ -1869,10 +1450,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"lz\",
-    \"description\": \"Esse nulla fuga in omnis veritatis omnis.\",
-    \"publish_date\": \"2024-09-11T08:32:48\",
-    \"author_id\": \"qui\"
+    \"title\": \"ysycfwvff\",
+    \"description\": \"Nihil et hic non aliquid quisquam quo.\",
+    \"publish_date\": \"2024-09-12T06:52:25\",
+    \"author_id\": \"labore\"
 }"
 </code></pre></div>
 
@@ -1888,10 +1469,10 @@ const headers = {
 };
 
 let body = {
-    "title": "lz",
-    "description": "Esse nulla fuga in omnis veritatis omnis.",
-    "publish_date": "2024-09-11T08:32:48",
-    "author_id": "qui"
+    "title": "ysycfwvff",
+    "description": "Nihil et hic non aliquid quisquam quo.",
+    "publish_date": "2024-09-12T06:52:25",
+    "author_id": "labore"
 };
 
 fetch(url, {
@@ -1980,10 +1561,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-v1-books"
-               value="lz"
+               value="ysycfwvff"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>lz</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ysycfwvff</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1991,10 +1572,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-books"
-               value="Esse nulla fuga in omnis veritatis omnis."
+               value="Nihil et hic non aliquid quisquam quo."
                data-component="body">
     <br>
-<p>Example: <code>Esse nulla fuga in omnis veritatis omnis.</code></p>
+<p>Example: <code>Nihil et hic non aliquid quisquam quo.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>publish_date</code></b>&nbsp;&nbsp;
@@ -2002,10 +1583,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="publish_date"                data-endpoint="POSTapi-v1-books"
-               value="2024-09-11T08:32:48"
+               value="2024-09-12T06:52:25"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-11T08:32:48</code></p>
+<p>Must be a valid date. Example: <code>2024-09-12T06:52:25</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>author_id</code></b>&nbsp;&nbsp;
@@ -2013,10 +1594,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author_id"                data-endpoint="POSTapi-v1-books"
-               value="qui"
+               value="labore"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>labore</code></p>
         </div>
         </form>
 
@@ -2037,9 +1618,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"mcsfqbppczqlwjcmmsutsubet\",
-    \"description\": \"Aperiam deserunt dicta numquam quidem.\",
-    \"publish_date\": \"2024-09-11T08:32:48\"
+    \"title\": \"hgqbxixhe\",
+    \"description\": \"Vel iusto veniam autem mollitia.\",
+    \"publish_date\": \"2024-09-12T06:52:25\"
 }"
 </code></pre></div>
 
@@ -2055,9 +1636,9 @@ const headers = {
 };
 
 let body = {
-    "title": "mcsfqbppczqlwjcmmsutsubet",
-    "description": "Aperiam deserunt dicta numquam quidem.",
-    "publish_date": "2024-09-11T08:32:48"
+    "title": "hgqbxixhe",
+    "description": "Vel iusto veniam autem mollitia.",
+    "publish_date": "2024-09-12T06:52:25"
 };
 
 fetch(url, {
@@ -2158,10 +1739,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-v1-books--id-"
-               value="mcsfqbppczqlwjcmmsutsubet"
+               value="hgqbxixhe"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>mcsfqbppczqlwjcmmsutsubet</code></p>
+<p>Must not be greater than 255 characters. Example: <code>hgqbxixhe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2169,10 +1750,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-books--id-"
-               value="Aperiam deserunt dicta numquam quidem."
+               value="Vel iusto veniam autem mollitia."
                data-component="body">
     <br>
-<p>Example: <code>Aperiam deserunt dicta numquam quidem.</code></p>
+<p>Example: <code>Vel iusto veniam autem mollitia.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>publish_date</code></b>&nbsp;&nbsp;
@@ -2180,10 +1761,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="publish_date"                data-endpoint="PUTapi-v1-books--id-"
-               value="2024-09-11T08:32:48"
+               value="2024-09-12T06:52:25"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-09-11T08:32:48</code></p>
+<p>Must be a valid date. Example: <code>2024-09-12T06:52:25</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>author_id</code></b>&nbsp;&nbsp;

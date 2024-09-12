@@ -4,7 +4,7 @@ namespace App\Interfaces;
 
 interface AuthorRepositoryInterface
 {
-    public function index();
+    public function index($filters, $perPage);
     public function getById($id);
     public function store(array $data);
     public function update(array $data, $id);

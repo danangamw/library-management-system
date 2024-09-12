@@ -10,6 +10,7 @@ use App\Http\Resources\AuthorResource;
 use App\Http\Resources\BookResource;
 use App\Interfaces\AuthorRepositoryInterface;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class AuthorController extends Controller
@@ -25,21 +26,22 @@ class AuthorController extends Controller
      * Display a listing of the authors.
      * 
      * @group Authors
+     * @queryParam search required Comma-separated list of fields to include in the response.
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $authors = $this->authorRepositoryInterface->index();
+        $filters = request()->only(['search']);
+        $perPage = request()->get('per_page', 10);
+        $authors = $this->authorRepositoryInterface->index($filters, $perPage);
 
-        return ApiResponseClass::sendResponse(AuthorResource::collection($authors), 'List of all authors', 200);
+        return ApiResponseClass::sendResponse($authors, 'List of all authors', 200);
     }
 
     /**
      * Store a newly created author in storage.
      * 
      * @group Authors
-     * @bodyParam name string required The name of the author. Example: J.K. Rowling
-     * @bodyParam bio string optional The biography of the author. Example: British author, best known for the Harry Potter series.
-     * @bodyParam birth_date date optional The birth date of the author. Example: 1965-07-31
+     * @param StoreAuthorRequest $request
      */
     public function store(StoreAuthorRequest $request): JsonResponse
     {
@@ -62,10 +64,6 @@ class AuthorController extends Controller
      * 
      * @group Authors
      * @urlParam id integer required The ID of the author. Example: 1
-     * @bodyParam name string The new name of the author. Example: J.K. Rowling
-     * @bodyParam bio string The new biography of the author. Example: British author, best known for the Harry Potter series.
-     * @bodyParam birth_date date The new birth date of the author. Example: 1965-07-31
-     * @urlParam id integer required The ID of the author. Example: 1
      */
     public function show($id): JsonResponse
     {
@@ -84,8 +82,9 @@ class AuthorController extends Controller
      * 
      * @group Authors
      * @urlParam id integer required The ID of the author. Example: 1
+     * @param UpdateAuthorRequest $request
      * @response {
-     *   "message": "Author successfully deleted"
+     *   "message": "Author successfully updated"
      * }
      */
     public function update(UpdateAuthorRequest $request,  $id): JsonResponse

@@ -21,15 +21,25 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
+    queryParameters:
+      search:
+        name: search
+        description: 'Comma-separated list of fields to include in the response.'
+        required: true
+        example: ab
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      search: ab
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"success":true,"data":[{"id":1,"name":"ttesting update","bio":"no bio needed","birth_date":"2024-09-11"},{"id":2,"name":"Jakob Lynch","bio":"Alias aut qui culpa natus assumenda. Sit et omnis non eveniet et. Veritatis voluptate quos reprehenderit nisi cumque cum.","birth_date":"1990-05-19"},{"id":3,"name":"Dr. Guillermo Kirlin","bio":"Corrupti aut illum laudantium et sit. Quod consequatur necessitatibus error aut. Ad quas blanditiis cumque laborum consequatur repellendus.","birth_date":"1993-01-12"},{"id":4,"name":"Mr. Adalberto Maggio DDS","bio":"Et odit ullam beatae eveniet rerum quo. Et nisi ipsam omnis architecto voluptas. Eaque sint aut delectus quibusdam ea. Cumque quo fuga mollitia deserunt.","birth_date":"1973-10-09"},{"id":5,"name":"Koby Emard","bio":"Cum aliquid sequi cumque consequatur repellat est. Quae dolorem laudantium rerum voluptatibus amet. Corporis veritatis esse delectus perspiciatis non dolores rem.","birth_date":"2010-01-14"},{"id":6,"name":"Helmer Gislason","bio":"Cum reiciendis sint debitis earum. Porro voluptatem sed dolorem qui sit animi. Pariatur porro itaque a suscipit optio. Explicabo ratione ullam et unde ex omnis. Impedit ducimus soluta incidunt.","birth_date":"2020-10-11"},{"id":7,"name":"Mr. Alexis Fay V","bio":"Iusto tempore quas repellendus. Odio dolores at ipsam optio adipisci asperiores. Quas quibusdam consectetur ut soluta corporis maiores. Omnis sunt iusto aut impedit ipsa.","birth_date":"1990-12-11"},{"id":8,"name":"Jorge Ondricka","bio":"Eveniet ut temporibus ea quis voluptas ut aliquam. Est iusto molestias ut sed vero ratione et. Omnis iste qui porro error optio. Sunt voluptatem rerum voluptatem aut numquam blanditiis facere.","birth_date":"2022-07-18"},{"id":9,"name":"Prof. Kayley Borer","bio":"Corrupti animi nesciunt omnis aperiam. Aut voluptatem deserunt ut corporis recusandae id.","birth_date":"1976-10-01"}],"message":"List of all authors"}'
+        content: '{"success":true,"data":{"current_page":1,"data":[{"id":7,"name":"Keith Abshire","bio":"Dolor eum voluptatibus cum voluptas quos id. Veritatis quaerat blanditiis aut dolorum. Voluptatibus dolores illum veniam. Molestias pariatur sed omnis animi iure.","birth_date":"2017-05-26","created_at":"2024-09-12T03:45:03.000000Z","updated_at":"2024-09-12T03:45:03.000000Z"}],"first_page_url":"http:\/\/localhost:8000\/api\/v1\/authors?page=1","from":1,"last_page":1,"last_page_url":"http:\/\/localhost:8000\/api\/v1\/authors?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/authors?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/localhost:8000\/api\/v1\/authors","per_page":10,"prev_page_url":null,"to":1,"total":1},"message":"List of all authors"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -72,43 +82,13 @@ endpoints:
       id: 1
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'The new name of the author.'
-        required: false
-        example: 'J.K. Rowling'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      bio:
-        name: bio
-        description: 'The new biography of the author.'
-        required: false
-        example: 'British author, best known for the Harry Potter series.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      birth_date:
-        name: birth_date
-        description: 'The new birth date of the author.'
-        required: false
-        example: '1965-07-31'
-        type: date
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-    cleanBodyParameters:
-      name: 'J.K. Rowling'
-      bio: 'British author, best known for the Harry Potter series.'
-      birth_date: '1965-07-31'
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"success":true,"data":{"id":1,"name":"ttesting update","bio":"no bio needed","birth_date":"2024-09-11"},"message":"Author retrieved"}'
+        status: 404
+        content: '{"success":true,"data":null,"message":"Author not found"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -144,35 +124,35 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'The name of the author.'
+        description: 'Must not be greater than 255 characters.'
         required: true
-        example: 'J.K. Rowling'
+        example: j
         type: string
         enumValues: []
-        exampleWasSpecified: true
+        exampleWasSpecified: false
         custom: []
       bio:
         name: bio
-        description: 'optional The biography of the author.'
+        description: ''
         required: false
-        example: 'British author, best known for the Harry Potter series.'
+        example: vero
         type: string
         enumValues: []
-        exampleWasSpecified: true
+        exampleWasSpecified: false
         custom: []
       birth_date:
         name: birth_date
-        description: 'optional The birth date of the author.'
+        description: 'Must be a valid date.'
         required: false
-        example: '1965-07-31'
-        type: date
+        example: '2024-09-12T06:52:25'
+        type: string
         enumValues: []
-        exampleWasSpecified: true
+        exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: 'J.K. Rowling'
-      bio: 'British author, best known for the Harry Potter series.'
-      birth_date: '1965-07-31'
+      name: j
+      bio: vero
+      birth_date: '2024-09-12T06:52:25'
     fileParameters: []
     responses: []
     responseFields: []
@@ -216,7 +196,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: zps
+        example: uxewtibeyexjmolgzv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -225,7 +205,7 @@ endpoints:
         name: bio
         description: ''
         required: false
-        example: rem
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -234,22 +214,22 @@ endpoints:
         name: birth_date
         description: 'Must be a valid date.'
         required: false
-        example: '2024-09-11T08:32:48'
+        example: '2024-09-12T06:52:25'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: zps
-      bio: rem
-      birth_date: '2024-09-11T08:32:48'
+      name: uxewtibeyexjmolgzv
+      bio: aut
+      birth_date: '2024-09-12T06:52:25'
     fileParameters: []
     responses:
       -
         status: 200
         content: |-
           {
-            "message": "Author successfully deleted"
+            "message": "Author successfully updated"
           }
         headers: []
         description: ''

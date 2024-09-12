@@ -10,6 +10,7 @@ use App\Http\Resources\BookResource;
 use App\Interfaces\BookRepositoryInterface;
 use App\Models\Author;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
@@ -25,13 +26,16 @@ class BookController extends Controller
      * Display a listing of the Books.
      * 
      * @group Books
+     * @queryParam search required Comma-separated list of fields to include in the response.
      * @return JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
-        $books = $this->bookRepositoryInterface->index();
+        $filters = request()->only(['search']);
+        $perPage = request()->get('per_page', 10);
+        $books = $this->bookRepositoryInterface->index($filters, $perPage);
 
-        return ApiResponseClass::sendResponse(BookResource::collection($books), "List of all books", 200);
+        return ApiResponseClass::sendResponse($books, "List of all books", 200);
     }
 
     /**
