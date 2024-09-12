@@ -15,7 +15,7 @@ This is a Laravel-based application designed to [briefly describe the purpose of
 
 Before you begin, ensure you have met the following requirements:
 
--   PHP (7.4 or later)
+-   PHP (8.1 or later)
 -   Composer (for managing PHP dependencies)
 -   MySQL or another supported database
 -   Redis (if caching is used)
@@ -132,7 +132,7 @@ php artisan serve
 
 By default, the application will be available at http://localhost:8000
 
-### 10. Accessing the Application
+### 9. Accessing the Application
 
 Open your web browser and navigate to http://localhost:8000 to access the application.
 
