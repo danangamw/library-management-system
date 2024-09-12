@@ -5,10 +5,22 @@ namespace App\Repositories;
 use App\Interfaces\AuthorRepositoryInterface;
 use App\Models\Author;
 use App\Models\Book;
+use Exception;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redis;
 
 class AuthorRepository implements AuthorRepositoryInterface
 {
+    private function redisConnected(): bool
+    {
+        try {
+            return Redis::ping() === '+PONG';
+        } catch (Exception $e) {
+            Log::error("Redis connection error: " . $e->getMessage());
+            return false;
+        }
+    }
+
     public function index($filters, $perPage)
     {
         $query = Author::query();
@@ -23,45 +35,61 @@ class AuthorRepository implements AuthorRepositoryInterface
     public function getById($id)
     {
         // return Author::find($id);
-        $cachedAuthor = Redis::get("author_{$id}");
+        $author = Author::find($id);
 
-        if (isset($cachedAuthor)) {
-            $author = json_decode($cachedAuthor, false);
+        if ($this->redisConnected()) {
+            $cachedAuthor = Redis::get("author_{$id}");
 
-            return $author;
-        } else {
-            $author = Author::find($id);
-            Redis::set("author_$id", $author);
+            if (isset($cachedAuthor)) {
+                $author = json_decode($cachedAuthor, false);
 
-            return $author;
+                return $author;
+            } else {
+                Redis::set("author_$id", $author);
+
+                return $author;
+            }
         }
+
+        return $author;
     }
 
     public function store(array $data)
     {
-        $newAuthor =
-            Author::create($data);
-        Redis::set("author_{$newAuthor->id}", $newAuthor);
+
+        $newAuthor = Author::create($data);
+        if ($this->redisConnected()) {
+            Redis::set("author_{$newAuthor->id}", $newAuthor);
+        }
+
         return $newAuthor;
     }
 
     public function update(array $data, $id)
     {
-        Redis::del("author_$id");
         $author = Author::find($id);
-        if ($author) {
-            $updatedAuthor = Author::whereId($id)->update($data);
+        if (!$author) {
+            return null;
+        }
+
+        $updatedAuthor = Author::whereId($id)->update($data);
+        if ($this->redisConnected()) {
+            Redis::del("author_$id");
             Redis::set("author_{$updatedAuthor->id}", $updatedAuthor);
             return $updatedAuthor;
         }
 
-        return null;
+        return $updatedAuthor;
     }
 
     public function delete($id)
     {
-        Redis::del("author_$id");
+
         Author::destroy($id);
+
+        if ($this->redisConnected()) {
+            Redis::del("author_$id");
+        }
     }
 
     public function books($id)
