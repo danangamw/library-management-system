@@ -17,6 +17,10 @@ return new class extends Migration
             $table->text('bio')->nullable();
             $table->date('birth_date')->nullable();
             $table->timestamps();
+
+            // indexing
+            $table->index("name", "authors_name_index");
+            $table->index("id", "authors_id_index");
         });
     }
 

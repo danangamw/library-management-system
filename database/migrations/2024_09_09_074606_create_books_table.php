@@ -18,6 +18,9 @@ return new class extends Migration
             $table->date('publish_date')->nullable();
             $table->foreignId('author_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+
+            // indexing
+            $table->index("id", "books_id_index");
         });
     }
 
