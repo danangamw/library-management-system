@@ -162,6 +162,11 @@ Run the command to generate your docs.
 php artisan scribe:generate
 ```
 
+Once generated, open your browser and navigate to the following URL to access the API documentation:
+```env
+http://localhost:8000/docs
+```
+
 ## Running Tests
 
 ### First, add phpunit package via Composer:
